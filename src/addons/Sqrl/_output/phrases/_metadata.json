@@ -1,0 +1,68 @@
+{
+    "con_acc.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "47d29a522e594c544dadf70abd064f5e"
+    },
+    "con_acc_desc.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "8af9810f0467a9fc9cf6c6b4468b421c"
+    },
+    "con_acc_sqrl_hostname_explain.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "228db2c74ed3a174f4c087a730403117"
+    },
+    "con_acc_sqrl_private_query_port_explain.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "b59505770389d53a3205fe5d8a754b8c"
+    },
+    "con_acc_sqrl_private_query_url_explain.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "85d8d0aedc4b9046fa94f9691d801273"
+    },
+    "con_acc_sqrl_public_query_url_explain.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "8edd8d212c55ebb860623a5aa47e016d"
+    },
+    "hostname.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "c8f4b8c435b3d99a66e1b91bec60737c"
+    },
+    "login_using_SQRL.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "058876358b9533c6dc61459fec0be967"
+    },
+    "private_query_port.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "d39ce822b684e52df1e530937549fba6"
+    },
+    "private_query_url.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "71b00aa97f4d828817c4b0cba0db40c1"
+    },
+    "public_query_url.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "e6e7c8f4a5fdd379e8615ec50867d69b"
+    }
+}

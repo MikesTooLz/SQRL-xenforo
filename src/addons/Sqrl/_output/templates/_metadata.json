@@ -1,0 +1,17 @@
+{
+    "admin/connected_account_provider_sqrl.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "7f96cc44cdbffd9fb64efea0b451adde"
+    },
+    "public/connected_account_associated_sqrl.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "46b71a85b3d1bacc4465f7e064116537"
+    },
+    "public/sqrl_view_qr_code.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "94c5343b668a2cf65bea02b2242265aa"
+    }
+}
