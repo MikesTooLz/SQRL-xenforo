@@ -97,12 +97,13 @@ Date.now = Date.now || function () { return (+new Date()) };
             $.ajax({
                 url: this.options.queryUrl + '/pag.sqrl',
                 success: this.handleQrAuthCheckResponse.bind(this),
-                error: function (jqXHR, textStatus, errorThrown) { console.log('pag.sqrl ->', textStatus); }
+                error: function (jqXHR, textStatus, errorThrown) { console.log('pag.sqrl ->', jqXHR.status); }
             });
         },
 
         handleQrAuthCheckResponse: function (body, textStatus, jqXHR) {
             console.log('pag.sqrl ->', body);
+            document.location.href = body;
         }
     });
 
