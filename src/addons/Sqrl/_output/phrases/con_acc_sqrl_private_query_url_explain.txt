@@ -1,1 +1,0 @@
-The URL prefix for the private SQRL query API. For example http://sqrl.example.com, without the trailing slash '/'.

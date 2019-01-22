@@ -35,8 +35,11 @@
 </xf:macro>
 
 <xf:macro name="sqrl_bit" arg-data="!">
-	<div data-xf-init="sqrl-login" data-query-url="{$data.options.public_query_url}" data-hostname="{$data.options.query_hostname}"
-	 class="sqrl-container">
+	<div
+		data-xf-init="sqrl-login"
+		data-hostname="{$data.options.hostname}"
+		class="sqrl-container"
+	>
 		<xf:button href="sqrl://todo" class="button--provider button--provider--{$data.provider_id}">
 			{{ phrase('con_acc.sqrl') }}
 		</xf:button>

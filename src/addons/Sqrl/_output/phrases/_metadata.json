@@ -21,25 +21,19 @@
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "228db2c74ed3a174f4c087a730403117"
+        "hash": "ea3a1bacb04ad01d24d483cb7cc27940"
     },
-    "con_acc_sqrl_private_query_port_explain.txt": {
+    "con_acc_sqrl_private_hostname_explain.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "b59505770389d53a3205fe5d8a754b8c"
+        "hash": "30ea2c6165b162ec86f61db6f942d582"
     },
-    "con_acc_sqrl_private_query_url_explain.txt": {
+    "con_acc_sqrl_private_port_explain.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "85d8d0aedc4b9046fa94f9691d801273"
-    },
-    "con_acc_sqrl_public_query_url_explain.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "8edd8d212c55ebb860623a5aa47e016d"
+        "hash": "cb3a4276c9e935d71f2f785bc9031cb9"
     },
     "hostname.txt": {
         "global_cache": false,
@@ -65,23 +59,17 @@
         "version_string": "1.0.0",
         "hash": "058876358b9533c6dc61459fec0be967"
     },
-    "private_query_port.txt": {
+    "private_hostname.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "d39ce822b684e52df1e530937549fba6"
+        "hash": "269a1217f03571477b9fcda3fe947026"
     },
-    "private_query_url.txt": {
+    "private_port.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "71b00aa97f4d828817c4b0cba0db40c1"
-    },
-    "public_query_url.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "e6e7c8f4a5fdd379e8615ec50867d69b"
+        "hash": "45311292718d46af5c949daa91ac9a62"
     },
     "register_and_be_tracked_using.txt": {
         "global_cache": false,

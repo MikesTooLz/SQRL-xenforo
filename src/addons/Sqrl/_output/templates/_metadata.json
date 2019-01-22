@@ -2,7 +2,22 @@
     "admin/connected_account_provider_sqrl.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "7f96cc44cdbffd9fb64efea0b451adde"
+        "hash": "a65725f63ec14ea96d4740a04e227b7d"
+    },
+    "public/_widget_thuix_aboutUsWidget.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "9d20ef46117fc6ee1beb8fe1d1742d27"
+    },
+    "public/_widget_thuix_quickNavWidget.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "e99158a8a938ab099fda79dd0c65e1f9"
+    },
+    "public/_widget_thuix_userNavWidget.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "70e4afe03f621849ad5455820f1fc96e"
     },
     "public/connected_account_associated_sqrl.html": {
         "version_id": 0,
@@ -17,11 +32,6 @@
     "public/sqrl_macros.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "815ed117403c5d3ea3990315ea730fd5"
-    },
-    "public/sqrl_view_qr_code.html": {
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "94c5343b668a2cf65bea02b2242265aa"
+        "hash": "61dc5e61473c79e1a1f6811e594670a2"
     }
 }

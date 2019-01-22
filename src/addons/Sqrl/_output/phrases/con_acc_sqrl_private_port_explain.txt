@@ -1,0 +1,1 @@
+The port number for reaching the private SQRL SSP API. Typically '55219'.

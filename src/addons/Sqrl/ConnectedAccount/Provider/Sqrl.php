@@ -35,10 +35,9 @@ class Sqrl extends AbstractProvider
 	public function getDefaultOptions()
 	{
 		return [
-			'public_query_url' => '',
-			'private_query_url' => '',
-			'private_query_port' => '',
-			'query_hostname' => '',
+			'hostname' => '',
+			'private_hostname' => '',
+			'private_port' => '',
 		];
 	}
 
@@ -57,22 +56,16 @@ class Sqrl extends AbstractProvider
 	// We override this because AbstractProvider assumes everyone is using OAuth, for custom behavior we need something like this instead
 	public function handleAuthorization(Controller $controller, ConnectedAccountProvider $provider, $returnUrl)
 	{
-		$viewParams = [
-			'queryUrl' => $provider->options['public_query_url'],
-			'hostname' => $provider->options['query_hostname'],
-		];
-
 		/** @var \XF\Session\Session $session */
 		$session = \XF::app()['session.public'];
 
 		$session->set('connectedAccountRequest', [
 			'provider' => $this->providerId,
 			'returnUrl' => $returnUrl,
-			// 'test' => $this->testMode,
 		]);
 		$session->save();
 
-		return $controller->view('Sqrl\ViewQR', 'sqrl_view_qr_code', $viewParams);
+		return $controller->message('This page is not supposed to show');
 	}
 
 	public function renderAssociated(ConnectedAccountProvider $provider, \XF\Entity\User $user)

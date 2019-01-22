@@ -15,14 +15,11 @@ class Api
 			throw new \XF\PrintableException("The SQRL provider is missing. Was this add-on installed properly?");
 		}
 		
-		$privateUrl = $provider->options['private_query_url'];
-		$port = $provider->options['private_query_port'];
-
 		$ch = curl_init();
 
-		$url = $privateUrl . '/' . $urlSuffix;
+		$url = 'http://' . $provider->options['private_hostname']  . '/' . $urlSuffix;
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_PORT, $port);
+		curl_setopt($ch, CURLOPT_PORT, $provider->options['private_port']);
 
 		// return the transfer as a string
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

@@ -1,1 +1,1 @@
-The hostname of the SQRL service. Used for sqrl://DOMAIN/. For example 'sqrl.grc.com'.
+The hostname of the SQRL service. Used for the SQRL client to connect and for the public SSP API. For example 'sqrl.grc.com'.

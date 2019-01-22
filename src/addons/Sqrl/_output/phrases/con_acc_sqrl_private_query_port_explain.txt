@@ -1,1 +1,0 @@
-The port number for the private query API. Typically '55219'.

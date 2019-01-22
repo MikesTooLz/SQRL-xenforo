@@ -1,0 +1,1 @@
+The hostname for reaching the private SQRL SSP API.

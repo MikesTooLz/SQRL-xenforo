@@ -8,14 +8,13 @@ console = console || {log: function(){}, warn: function(){}};
 
     XF.SqrlLogin = XF.Element.newHandler({
         options: {
-            queryUrl: null,
             hostname: null,
         },
 
         init: function () {
             this.latestData = null;
 
-            if (!this.options.queryUrl || !this.options.hostname)
+            if (!this.options.hostname || !this.options.hostname)
             {
                 console.warn('Unable to find query URL or hostname. Failed.');
                 return;
@@ -23,7 +22,7 @@ console = console || {log: function(){}, warn: function(){}};
 
             // Get nut
             $.ajax({
-                url:      this.options.queryUrl + '/nut.sqrl', 
+                url:      'https://' + this.options.hostname + '/nut.sqrl', 
                 success:  this.gotNut.bind(this),
                 dataType: 'text',
             });
@@ -51,7 +50,7 @@ console = console || {log: function(){}, warn: function(){}};
 
         renderNut: function () {
             var link = 'sqrl://' + this.options.hostname + '/cli.sqrl?' + this.latestData.nutAndCan;
-            var png = this.options.queryUrl + '/png.sqrl?nut=' + this.latestData.nut;
+            var png = 'https://' + this.options.hostname + '/png.sqrl?nut=' + this.latestData.nut;
 
             this.$target.find('> a.button')
                 .attr('href', link)
@@ -89,7 +88,7 @@ console = console || {log: function(){}, warn: function(){}};
 
         qrAuthCheck: function() {
             $.ajax({
-                url: this.options.queryUrl + '/pag.sqrl',
+                url: 'https://' + this.options.hostname + '/pag.sqrl',
                 success: this.handleQrAuthCheckResponse.bind(this),
                 error: function (jqXHR, textStatus, errorThrown) { console.log('pag.sqrl ->', jqXHR.status); }
             });
