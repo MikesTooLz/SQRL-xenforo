@@ -1,0 +1,9 @@
+{
+    "template": "register_form",
+    "description": "Add phrase about (be tracked) for other providers",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "{{ phrase('register_faster_using') }}",
+    "replace": "{{ phrase('register_and_be_tracked_using') }}"
+}

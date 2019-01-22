@@ -1,4 +1,10 @@
 {
+    "associated.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "0a8d254bc53e7dc58ca642a18137d3fe"
+    },
     "con_acc.sqrl.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -41,6 +47,18 @@
         "version_string": "1.0.0",
         "hash": "c8f4b8c435b3d99a66e1b91bec60737c"
     },
+    "log_in_and_be_tracked_in_using.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "29ec47719752864e9cd0809109c440b2"
+    },
+    "log_in_instantly_using.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "f890381dea22754cd459c6710f9553f3"
+    },
     "login_using_SQRL.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -64,5 +82,53 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "e6e7c8f4a5fdd379e8615ec50867d69b"
+    },
+    "register_and_be_tracked_using.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "02eb96b7453a756f40b968056f969e5a"
+    },
+    "register_instantly_using.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "110ad9e58ffe293912f58155cdb6d61b"
+    },
+    "style_prop.sqrlFonts.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "f9355e9a912ae63da10bc3c0479ac3c0"
+    },
+    "style_prop.sqrlLogo.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "164cc23e70898307fbce800c1a7c815b"
+    },
+    "style_prop_desc.sqrlFonts.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "efec42a06c3b08e897e9b9c743e00c49"
+    },
+    "style_prop_desc.sqrlLogo.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "style_prop_group.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "47d29a522e594c544dadf70abd064f5e"
+    },
+    "style_prop_group_desc.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
     }
 }

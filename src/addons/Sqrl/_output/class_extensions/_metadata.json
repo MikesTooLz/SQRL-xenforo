@@ -1,4 +1,10 @@
 {
+    "XF-Pub-Controller-Login_Sqrl-Extend-XF-Pub-Controller-Login.json": {
+        "hash": "6c232a09186f9ed3602d993b6107fea1"
+    },
+    "XF-Pub-Controller-Register_Sqrl-Extend-XF-Pub-Controller-Register.json": {
+        "hash": "c78cd56575c35be922c8bc4209c70fba"
+    },
     "XF-Repository-ConnectedAccount_Sqrl-Extend-XF-Repository-ConnectedAccount.json": {
         "hash": "89f36cc6e9102520536d9f422ebec0a5"
     }

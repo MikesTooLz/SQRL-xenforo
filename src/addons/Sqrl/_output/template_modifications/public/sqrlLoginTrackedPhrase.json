@@ -1,0 +1,9 @@
+{
+    "template": "login",
+    "description": "Add phrase about being tracked for other providers",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "{{ phrase('log_in_using') }}",
+    "replace": "{{ phrase('log_in_and_be_tracked_in_using') }}"
+}

@@ -7,7 +7,17 @@
     "public/connected_account_associated_sqrl.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "46b71a85b3d1bacc4465f7e064116537"
+        "hash": "4e6638f058a7e7367b8f737c322b5653"
+    },
+    "public/sqrl.less": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "708ef41b630a83d5e5e0cc1847391418"
+    },
+    "public/sqrl_macros.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "815ed117403c5d3ea3990315ea730fd5"
     },
     "public/sqrl_view_qr_code.html": {
         "version_id": 0,

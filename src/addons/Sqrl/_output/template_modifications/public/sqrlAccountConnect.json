@@ -1,0 +1,9 @@
+{
+    "template": "connected_account_macros",
+    "description": "Add direct association on connected accounts page",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "\t\t<xf:button href=\"{{ link('register/connected-accounts', $provider, {'setup': true}) }}\"\n\t\t\tclass=\"button--provider button--provider--{$provider.provider_id}\">\n\t\t\t{{ phrase('associate_with_x', {'provider': $provider.title}) }}\n\t\t</xf:button>",
+    "replace": "\t\t<xf:if is=\"{{ $provider.provider_id == 'sqrl' }}\">\n\t\t\t<xf:macro template=\"sqrl_macros\" name=\"account_connected_account\" arg-data=\"{$provider}\" />\n\t\t<xf:else />\n$0\n\t\t</xf:if>"
+}

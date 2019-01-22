@@ -1,0 +1,9 @@
+{
+    "template": "register_form",
+    "description": "Add big SQRL row to register page",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$providers is not empty\">",
+    "replace": "<xf:macro template=\"sqrl_macros\" name=\"register_header\" arg-data=\"{$sqrl}\" />\n\n$0"
+}

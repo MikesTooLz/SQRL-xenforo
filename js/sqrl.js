@@ -1,5 +1,7 @@
 // Steve's adding of old browser support
 Date.now = Date.now || function () { return (+new Date()) };
+// Rasmus' adding of old browser support
+console = console || {log: function(){}, warn: function(){}};
 
 !function ($, window, document, _undefined) {
     "use strict";
@@ -13,15 +15,11 @@ Date.now = Date.now || function () { return (+new Date()) };
         init: function () {
             this.latestData = null;
 
-            console.log('Initialising SQRL login', this.options.queryUrl)
-            console.log('Debug', 5);
             if (!this.options.queryUrl || !this.options.hostname)
             {
                 console.warn('Unable to find query URL or hostname. Failed.');
                 return;
             }
-            console.log(this.$target);
-            console.log(this.$target[0]);
 
             // Get nut
             $.ajax({
@@ -32,21 +30,17 @@ Date.now = Date.now || function () { return (+new Date()) };
         },
 
         gotNut: function (nutAndCan, textStatus, jqXHR) {
-            console.log(nutAndCan);
-            var nut, can;
-            nutAndCan.split('&').map(function(param) {
-                var nameAndValue = param.split('=');
-                switch (nameAndValue[0]) {
-                    case 'nut':
-                        nut = nameAndValue[1];
-                        console.log('Nut:', nut);
-                        break;
-                        // case 'can':
-                        //     can = nameAndValue[1];
-                        //     console.log('Can:', can);
-                        //     break;
-                    }
-                });
+            var nut;
+            var nameAndValuePairs = nutAndCan.split('&');
+            for (var i = 0; i < nameAndValuePairs.length; i++)
+            {
+                var nameAndValue = nameAndValuePairs[i].split('=');
+                if (nameAndValue[0] == 'nut')
+                {
+                    nut = nameAndValue[1];
+                    break;
+                }
+            }
             this.latestData = {nut: nut, nutAndCan: nutAndCan};
 
             this.renderNut();
@@ -56,13 +50,13 @@ Date.now = Date.now || function () { return (+new Date()) };
         },
 
         renderNut: function () {
-            var link = $('<a />');
-            link.attr('href', 'sqrl://' + this.options.hostname + '/cli.sqrl?' + this.latestData.nutAndCan);
-            link.click(this.linkClicked.bind(this));
-            var png = $('<img />');
-            png.attr('src', this.options.queryUrl + '/png.sqrl?nut=' + this.latestData.nut);
-            link.append(png);
-            this.$target.append(link);
+            var link = 'sqrl://' + this.options.hostname + '/cli.sqrl?' + this.latestData.nutAndCan;
+            var png = this.options.queryUrl + '/png.sqrl?nut=' + this.latestData.nut;
+
+            this.$target.find('> a.button')
+                .attr('href', link)
+                .click(this.linkClicked.bind(this));
+            this.$target.find('> img').attr('src', png);
         },
 
         linkClicked: function(e) {

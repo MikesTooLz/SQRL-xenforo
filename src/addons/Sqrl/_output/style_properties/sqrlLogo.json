@@ -1,0 +1,13 @@
+{
+    "group_name": "sqrl",
+    "title": "SQRL Logo",
+    "description": "",
+    "property_type": "value",
+    "css_components": [],
+    "value_type": "string",
+    "value_parameters": "",
+    "depends_on": "",
+    "value_group": "",
+    "property_value": "styles/default/sqrl/logo.png",
+    "display_order": 0
+}

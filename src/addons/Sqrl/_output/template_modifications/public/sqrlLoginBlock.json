@@ -1,0 +1,9 @@
+{
+    "template": "login",
+    "description": "Add SQRL to top of login page",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:form action=\"{{ link('login/login') }}\" class=\"block\">",
+    "replace": "<xf:macro template=\"sqrl_macros\" name=\"login_header\" arg-data=\"{$sqrl}\" />\n\n$0"
+}
