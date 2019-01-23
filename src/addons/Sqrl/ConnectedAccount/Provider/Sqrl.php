@@ -42,6 +42,21 @@ class Sqrl extends AbstractProvider
 		];
 	}
 
+	public function isUsable(ConnectedAccountProvider $provider)
+	{
+		$addon = \XF::app()->finder('XF:Addon')->whereId('Sqrl')->fetchOne();
+		if (!$addon || !$addon->active)
+		{
+			return false;
+		}
+		return parent::isUsable($provider);
+	}
+
+	public function canBeTested()
+	{
+		return false;
+	}
+
 	public function getOAuthConfig(ConnectedAccountProvider $provider, $redirectUri = null)
 	{
 		// We just want a link to our QR page
