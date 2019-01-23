@@ -1,4 +1,10 @@
 {
+    "XF-ControllerPlugin-Error_Sqrl-Extend-XF-ControllerPlugin-Error.json": {
+        "hash": "95e83fed476337608e8095efcfdcf2e3"
+    },
+    "XF-Entity-User_Sqrl-Extend-XF-Entity-User.json": {
+        "hash": "e148902deb56d7d5403283b0a4a27c8e"
+    },
     "XF-Pub-Controller-Login_Sqrl-Extend-XF-Pub-Controller-Login.json": {
         "hash": "6c232a09186f9ed3602d993b6107fea1"
     },

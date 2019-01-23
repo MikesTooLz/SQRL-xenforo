@@ -3,6 +3,16 @@
 // ################## THIS IS A GENERATED FILE ##################
 // DO NOT EDIT DIRECTLY. EDIT THE CLASS EXTENSIONS IN THE CONTROL PANEL.
 
+namespace Sqrl\Extend\XF\ControllerPlugin
+{
+	class XFCP_Error extends \XF\ControllerPlugin\Error {}
+}
+
+namespace Sqrl\Extend\XF\Entity
+{
+	class XFCP_User extends \XF\Entity\User {}
+}
+
 namespace Sqrl\Extend\XF\Pub\Controller
 {
 	class XFCP_Login extends \XF\Pub\Controller\Login {}

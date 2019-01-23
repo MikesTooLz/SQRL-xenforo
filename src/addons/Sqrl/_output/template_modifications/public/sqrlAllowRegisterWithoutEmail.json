@@ -1,0 +1,9 @@
+{
+    "template": "register_connected_account",
+    "description": "Allow register without email",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:macro template=\"register_macros\" name=\"email_row\" />",
+    "replace": "<xf:if is=\"{{ $provider.provider_id == 'sqrl' and $provider.options.allow_register_without_email == '1' }}\">\n\t\t\t\t\t\t\t\t<xf:textboxrow name=\"email_row\" value=\"\" type=\"email\" autocomplete=\"off\"\n\t\t\t\t\t\t\t\t\tmaxlength=\"{{ max_length($xf.visitor, 'email') }}\"\n\t\t\t\t\t\t\t\t\tlabel=\"{{ phrase('email') }}\"\n\t\t\t\t\t\t\t\t\thint=\"{{ phrase('optional') }}\" />\n\t\t\t\t\t\t<xf:else />\n$0\n\t\t\t\t\t\t</xf:if>"
+}

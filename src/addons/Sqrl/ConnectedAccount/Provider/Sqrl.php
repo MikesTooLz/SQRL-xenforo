@@ -37,7 +37,8 @@ class Sqrl extends AbstractProvider
 		return [
 			'hostname' => '',
 			'private_hostname' => '',
-			'private_port' => '',
+			'private_port' => 55219,
+			'allow_register_without_email' => '0',
 		];
 	}
 

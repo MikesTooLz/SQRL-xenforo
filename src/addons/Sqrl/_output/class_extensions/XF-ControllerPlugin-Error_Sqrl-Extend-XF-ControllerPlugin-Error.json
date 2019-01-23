@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\ControllerPlugin\\Error",
+    "to_class": "Sqrl\\Extend\\XF\\ControllerPlugin\\Error",
+    "execute_order": 10,
+    "active": true
+}

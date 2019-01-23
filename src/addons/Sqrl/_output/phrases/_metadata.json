@@ -1,4 +1,10 @@
 {
+    "allow_register_without_email.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "886295f8a3fbeeb40c5484f0e443fc80"
+    },
     "associated.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -82,6 +88,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "110ad9e58ffe293912f58155cdb6d61b"
+    },
+    "require_email_on_register.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "ede5aa8a62f221db3a648d1af9ab8030"
     },
     "style_prop.sqrlFonts.txt": {
         "global_cache": false,

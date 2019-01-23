@@ -7,16 +7,10 @@ class Login extends \XF\Pub\Controller\Login
     public function actionIndex()
     {
         $replyView = parent::actionIndex();
+        $sqrl = \Sqrl\Util::separateSqrlFromProviders($replyView);
 
-        $providers = $replyView->getParam('providers');
-        // Separate out the SQRL provider and pass it separately to our template
-        if (isset($providers['sqrl']))
+        if ($sqrl)
         {
-            $sqrl = $providers['sqrl'];
-            $replyView->setParam('sqrl', $sqrl);
-            unset($providers['sqrl']);
-
-            // Also setup session
             $handler = $sqrl->getHandler();
             $redirect = $this->getDynamicRedirect();
             $handler->handleAuthorization($this, $sqrl, $redirect);

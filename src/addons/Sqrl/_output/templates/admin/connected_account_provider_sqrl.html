@@ -12,3 +12,8 @@
 	label="{{ phrase('private_port') }}"
 	hint="{{ phrase('required') }}"
 	explain="{{ phrase('con_acc_sqrl_private_port_explain') }}" />
+
+<xf:radiorow name="options[allow_register_without_email]" value="{$options.allow_register_without_email}">
+	<xf:option value="0">{{ phrase('require_email_on_register') }}</xf:option>
+	<xf:option value="1">{{ phrase('allow_register_without_email') }}</xf:option>
+</xf:radiorow>

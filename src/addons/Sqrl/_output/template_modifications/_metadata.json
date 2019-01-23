@@ -5,11 +5,17 @@
     "public/sqrlAddExtraRegister.json": {
         "hash": "66d45f38036f57f4f9e313f8e0c39c7c"
     },
+    "public/sqrlAllowRegisterWithoutEmail.json": {
+        "hash": "ac8830bbbc6574f013e4000869349b78"
+    },
     "public/sqrlLoginBlock.json": {
         "hash": "30966a6438b8cce39f3daf65028867f2"
     },
     "public/sqrlLoginTrackedPhrase.json": {
         "hash": "a3f130133e4c97424081bde4ada79eb6"
+    },
+    "public/sqrlMustBeLoggedInPage.json": {
+        "hash": "75ea728842e13b0471ae561bf932d452"
     },
     "public/sqrlTrackingPhrase.json": {
         "hash": "71c4bf794565ec347929c2fcde28e879"
