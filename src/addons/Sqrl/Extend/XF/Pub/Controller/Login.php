@@ -18,4 +18,19 @@ class Login extends \XF\Pub\Controller\Login
 
         return $replyView;
     }
+
+    public function actionLogin()
+    {
+        $replyView = parent::actionLogin();
+        $sqrl = \Sqrl\Util::separateSqrlFromProviders($replyView);
+
+        if ($sqrl)
+        {
+            $handler = $sqrl->getHandler();
+            $redirect = $this->getDynamicRedirect();
+            $handler->handleAuthorization($this, $sqrl, $redirect);
+        }
+
+        return $replyView;
+    }
 }
