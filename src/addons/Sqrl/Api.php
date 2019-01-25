@@ -4,7 +4,7 @@ namespace Sqrl;
 
 class Api
 {
-	protected static function queryApi($urlSuffix)
+	protected static function queryApi($urlSuffix, $multiLine = false)
 	{
 		$app = \XF::app();
 		$provider = $app->finder('XF:ConnectedAccountProvider')
@@ -41,8 +41,25 @@ class Api
 		
 		curl_close($ch);
 
-		parse_str($response, $parsedResponse);
-		return $parsedResponse;
+		// Logging
+		// $fh = fopen(\XF\Util\File::getTempDir() . '/sqrl.log', 'a');
+		// fwrite($fh, "$url => '$response'\n");
+
+		$parsedLines = [];
+		$lines = preg_split('#[\r\n]+#', $response, -1, PREG_SPLIT_NO_EMPTY);
+		foreach ($lines as $line)
+		{
+			parse_str($line, $parsed);
+			$parsedLines[] = $parsed;
+		}
+		if ($multiLine)
+		{
+			return $parsedLines;
+		}
+		else
+		{
+			return reset($parsedLines);
+		}
 	}
 
 	public static function cps($token)
@@ -94,12 +111,12 @@ class Api
 
 	public static function getAssociationsByUserId($userId)
 	{
-		return self::queryApi('lst.sqrl?' . http_build_query(['acct' => $userId]));
+		return self::queryApi('lst.sqrl?' . http_build_query(['acct' => $userId]), true);
 	}
 
 	public static function getAssociationsBySqrlId($sqrlId)
 	{
-		return self::queryApi('lst.sqrl?' . http_build_query(['user' => $sqrlId]));
+		return self::queryApi('lst.sqrl?' . http_build_query(['user' => $sqrlId]), true);
 	}
 
 	public static function getInvite($userId, $identityName, $stat) 
