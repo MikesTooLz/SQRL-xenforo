@@ -8,6 +8,9 @@
     "XF-Entity-User_Sqrl-Extend-XF-Entity-User.json": {
         "hash": "e148902deb56d7d5403283b0a4a27c8e"
     },
+    "XF-Pub-Controller-Account_Sqrl-Extend-XF-Pub-Controller-Account.json": {
+        "hash": "d931f901b2a5041d89f9597d51e9b858"
+    },
     "XF-Pub-Controller-Login_Sqrl-Extend-XF-Pub-Controller-Login.json": {
         "hash": "6c232a09186f9ed3602d993b6107fea1"
     },
