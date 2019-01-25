@@ -6,7 +6,6 @@ class Account extends \XF\Pub\Controller\Account
 {
     public function actionConnectedAccount()
     {
-        \XF::dump(\Sqrl\Api::getAssociationsByUserId(\XF::visitor()->user_id));
         $replyView = parent::actionConnectedAccount();
         $providers = $replyView->getParam('providers');
 
