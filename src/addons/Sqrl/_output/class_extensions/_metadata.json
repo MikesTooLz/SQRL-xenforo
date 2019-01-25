@@ -2,6 +2,9 @@
     "XF-ControllerPlugin-Error_Sqrl-Extend-XF-ControllerPlugin-Error.json": {
         "hash": "95e83fed476337608e8095efcfdcf2e3"
     },
+    "XF-Entity-ConnectedAccountProvider_Sqrl-Extend-XF-Entity-ConnectedAccountProvider.json": {
+        "hash": "5d1e6018847b62a097bd92c0c6dbbb77"
+    },
     "XF-Entity-User_Sqrl-Extend-XF-Entity-User.json": {
         "hash": "e148902deb56d7d5403283b0a4a27c8e"
     },

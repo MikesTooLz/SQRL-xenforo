@@ -10,6 +10,7 @@ namespace Sqrl\Extend\XF\ControllerPlugin
 
 namespace Sqrl\Extend\XF\Entity
 {
+	class XFCP_ConnectedAccountProvider extends \XF\Entity\ConnectedAccountProvider {}
 	class XFCP_User extends \XF\Entity\User {}
 }
 
