@@ -17,4 +17,21 @@ abstract class Util
         }
         return null;
     }
+
+    public static function isSqrlOnlyUser(\XF\Entity\User $user = null)
+    {
+        if ($user == null)
+        {
+            $user = \XF::visitor();
+        }
+
+        $auth = $user->Auth->getAuthenticationHandler();
+
+        // Only override this method if we don't have SQRL and don't have a password
+        if (isset($user->ConnectedAccounts['sqrl']) && (!$auth || !$auth->hasPassword()))
+        {
+            return true;
+        }
+        return false;
+    }
 }

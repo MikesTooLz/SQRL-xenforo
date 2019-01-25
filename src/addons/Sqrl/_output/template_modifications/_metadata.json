@@ -17,6 +17,9 @@
     "public/sqrlMustBeLoggedInPage.json": {
         "hash": "75ea728842e13b0471ae561bf932d452"
     },
+    "public/sqrlPasswordChangeRemoveCurrentPassword.json": {
+        "hash": "c382e7f44fada94c6ed69b54a960c465"
+    },
     "public/sqrlTrackingPhrase.json": {
         "hash": "71c4bf794565ec347929c2fcde28e879"
     }

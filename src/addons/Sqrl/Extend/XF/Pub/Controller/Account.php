@@ -14,7 +14,7 @@ class Account extends \XF\Pub\Controller\Account
             $sqrl = $providers['sqrl'];
             $handler = $sqrl->getHandler();
             // $redirect = $this->getDynamicRedirect();
-            $redirect = $this->router()->buildLink('account/connected-account');
+            $redirect = $this->buildLink('account/connected-account');
             $handler->handleAuthorization($this, $sqrl, $redirect);
         }
 
@@ -44,20 +44,18 @@ class Account extends \XF\Pub\Controller\Account
     {
         $visitor = \XF::visitor();
 
-        $auth = $visitor->Auth->getAuthenticationHandler();
-
         // Only override this method if we don't have SQRL and don't have a password
-        if (!isset($visitor->ConnectedAccounts['sqrl']) || ($auth && $auth->hasPassword()))
+        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
         {
             return parent::actionEmail();
         }
 
         // Do SQRL verification first
-        if ($this->session()->get('lastSqrlAuthentication') < \XF::$time - 5 * 6)
+        if ($this->session()->get('lastSqrlAuthentication') < \XF::$time - 5 * 60)
         {
             $sqrl = $this->assertProviderExists('sqrl');
             $handler = $sqrl->getHandler();
-            $returnUrl = $this->router()->buildLink('account/email');
+            $returnUrl = $this->buildLink('account/email');
             $handler->handleAuthorization($this, $sqrl, $returnUrl);
             $this->session()->set('sqrlAction', 'verify');
             $this->session()->save();
@@ -84,10 +82,8 @@ class Account extends \XF\Pub\Controller\Account
 
     protected function emailSaveProcess(\XF\Entity\User $visitor)
     {
-        $auth = $visitor->Auth->getAuthenticationHandler();
-
         // Only override this method if we don't have SQRL and don't have a password
-        if (!isset($visitor->ConnectedAccounts['sqrl']) || ($auth && $auth->hasPassword()))
+        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
         {
             return parent::emailSaveProcess($visitor);
         }
@@ -125,6 +121,66 @@ class Account extends \XF\Pub\Controller\Account
         }
 
         return $form;
+    }
+
+    public function actionSecurity()
+    {
+        $lastSqrlAuthentication = $this->session()->get('lastSqrlAuthentication');
+        $visitor = \XF::visitor();
+        $reply = parent::actionSecurity();
+
+        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        {
+            return $reply;
+        }
+
+        // Do SQRL verification first
+        if ($this->session()->get('lastSqrlAuthentication') < \XF::$time - 5 * 60)
+        {
+            $sqrl = $this->assertProviderExists('sqrl');
+            $handler = $sqrl->getHandler();
+            $returnUrl = $this->buildLink('account/security');
+            $handler->handleAuthorization($this, $sqrl, $returnUrl);
+            $this->session()->set('sqrlAction', 'verify');
+            $this->session()->save();
+            $view = $this->view('XF:Account\SqrlVerify', 'sqrl_verify', ['sqrl' => $sqrl]);
+            return $this->addAccountWrapperParams($view, 'account_security');
+        }
+
+        // This ensures a template modification renders without 'old password'
+        if (!$this->isPost() && \Sqrl\Util::isSqrlOnlyUser($visitor))
+        {
+            $reply->setParam('sqrlAuthentication', true);
+            $reply->setParam('hasPassword', true);
+        }
+
+        if ($this->isPost() && $lastSqrlAuthentication)
+        {
+            $this->session()->set('lastSqrlAuthentication', $lastSqrlAuthentication);
+            $this->session()->save();
+        }
+
+        return $reply;
+    }
+
+    protected function setupPasswordChange()
+    {
+        $visitor = \XF::visitor();
+        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        {
+            return parent::setupPasswordChange();
+        }
+        $input = $this->filter([
+            'password' => 'str',
+            'password_confirm' => 'str'
+        ]);
+
+        if ($input['password'] !== $input['password_confirm'])
+        {
+            throw $this->errorException(\XF::phrase('passwords_did_not_match'));
+        }
+
+        return $this->service('XF:User\PasswordChange', $visitor, $input['password']);
     }
 
 }
