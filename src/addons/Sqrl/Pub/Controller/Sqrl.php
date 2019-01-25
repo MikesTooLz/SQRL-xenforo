@@ -12,9 +12,14 @@ use XF\Pub\Controller\AbstractController;
 
 class Sqrl extends AbstractController
 {
-	public function actionLogin(ParameterBag $params)
+	public function actionRemovePassword(ParameterBag $params)
 	{
-		return $this->message('Test');
+		$visitor = \XF::visitor();
+		$visitor->Auth->setNoPassword();
+		$visitor->Auth->save();
+		$this->plugin('XF:Login')->handleVisitorPasswordChange();
+		$this->session()->save();
+		return $this->message('Done');
 	}
 
 	public function actionAuthenticate(ParameterBag $params)
