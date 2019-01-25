@@ -10,6 +10,6 @@ class User extends \XF\Entity\User
         {
             return true;
         }
-        return parent::verifyEmail();
+        return parent::verifyEmail($email);
     }
 }
