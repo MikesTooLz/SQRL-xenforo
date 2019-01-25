@@ -1,0 +1,11 @@
+<xf:title>{{ phrase('verify_identity_with_sqrl') }}</xf:title>
+
+<xf:wrap template="account_wrapper" />
+
+<xf:form action="{{ link('account/email') }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body sqrl-verify-block-body">
+			<xf:macro template="sqrl_macros" name="sqrl_bit" arg-data="{$sqrl}" />
+		</div>
+	</div>
+</xf:form>

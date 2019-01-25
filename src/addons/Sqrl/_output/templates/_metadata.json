@@ -19,6 +19,11 @@
         "version_string": "1.0.0",
         "hash": "70e4afe03f621849ad5455820f1fc96e"
     },
+    "public/account_email_sqrl.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "e681a979a6db874d29e7b49fdd8cb9b1"
+    },
     "public/connected_account_associated_sqrl.html": {
         "version_id": 0,
         "version_string": "1.0.0",
@@ -27,11 +32,16 @@
     "public/sqrl.less": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "708ef41b630a83d5e5e0cc1847391418"
+        "hash": "2075dd03eac66c7115bd3304bf1a10e2"
     },
     "public/sqrl_macros.html": {
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "61dc5e61473c79e1a1f6811e594670a2"
+    },
+    "public/sqrl_verify.html": {
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "4438c9db2750e24f6e7fab6efa8ac600"
     }
 }

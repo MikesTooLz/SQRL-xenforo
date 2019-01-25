@@ -44,6 +44,22 @@ class Sqrl extends AbstractController
 				\Sqrl\Api::removeAssociation($userId, $sqrlId);
 			}
 		}
+		$sqrlAction = $session->get('sqrlAction');
+		if ($sqrlAction == 'verify')
+		{
+			$this->session()->set('sqrlAction', '');
+			if ($user && $user->user_id == $visitor->user_id)
+			{
+				$this->session()->set('lastSqrlAuthentication', \XF::$time);
+				$this->session()->save();
+				return $this->redirect($connectedAccountRequest['returnUrl']);
+			}
+			else
+			{
+				$this->session()->save();
+				return $this->message("You are using the wrong SQRL id.");
+			}
+		}
 		if ($user)
 		{
 			if ($this->isLoggedIn())
