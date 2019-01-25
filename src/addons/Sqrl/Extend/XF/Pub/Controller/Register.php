@@ -35,4 +35,15 @@ class Register extends \XF\Pub\Controller\Register
         }
         return parent::actionConnectedAccountRegister($params);
     }
+
+    protected function finalizeRegistration(\XF\Entity\User $user)
+    {
+        // We know this variable is only set if we are already registering with SQRL
+        if (\Sqrl\GlobalState::$allowRegisterWithoutEmail)
+        {
+            $user->set('user_state', 'valid');
+            $user->save();
+        }
+        return parent::finalizeRegistration($user);
+    }
 }
