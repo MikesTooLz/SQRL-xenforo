@@ -11,88 +11,88 @@ use XF\Entity\User;
 
 class Sqrl extends AbstractProvider
 {
-	public function getOAuthServiceName()
-	{
-		return 'Sqrl';
-	}
+    public function getOAuthServiceName()
+    {
+        return 'Sqrl';
+    }
 
-	public function getProviderDataClass()
-	{
-		return 'Sqrl:ProviderData\\' . $this->getOAuthServiceName();
-	}
+    public function getProviderDataClass()
+    {
+        return 'Sqrl:ProviderData\\' . $this->getOAuthServiceName();
+    }
 
-	/**
-	 * @param ConnectedAccountProvider $provider
-	 * @param User $user
-	 *
-	 * @return StorageState
-	 */
-	public function getStorageState(ConnectedAccountProvider $provider, User $user)
-	{
-		return new \Sqrl\StorageState($provider, $user);
-	}
+    /**
+     * @param ConnectedAccountProvider $provider
+     * @param User $user
+     *
+     * @return StorageState
+     */
+    public function getStorageState(ConnectedAccountProvider $provider, User $user)
+    {
+        return new \Sqrl\StorageState($provider, $user);
+    }
 
-	public function getDefaultOptions()
-	{
-		return [
-			'hostname' => '',
-			'private_hostname' => '',
-			'private_port' => 55219,
-			'allow_register_without_email' => '0',
-		];
-	}
+    public function getDefaultOptions()
+    {
+        return [
+            'hostname' => '',
+            'private_hostname' => '',
+            'private_port' => 55219,
+            'allow_register_without_email' => '0',
+        ];
+    }
 
-	public function isUsable(ConnectedAccountProvider $provider)
-	{
-		$addon = \XF::app()->finder('XF:Addon')->whereId('Sqrl')->fetchOne();
-		if (!$addon || !$addon->active)
-		{
-			return false;
-		}
-		return parent::isUsable($provider);
-	}
+    public function isUsable(ConnectedAccountProvider $provider)
+    {
+        $addon = \XF::app()->finder('XF:Addon')->whereId('Sqrl')->fetchOne();
+        if (!$addon || !$addon->active)
+        {
+            return false;
+        }
+        return parent::isUsable($provider);
+    }
 
-	public function canBeTested()
-	{
-		return false;
-	}
+    public function canBeTested()
+    {
+        return false;
+    }
 
-	public function getOAuthConfig(ConnectedAccountProvider $provider, $redirectUri = null)
-	{
-		// We just want a link to our QR page
-		return [
-			'key' => '',
-			'secret' => '',
-			'scopes' => '',
-			'redirect' => $redirectUri ?: $this->getRedirectUri($provider),
-			// 'redirect' => \XF::app()->router()->buildLink('sqrl/authenticate'),
-		];
-	}
+    public function getOAuthConfig(ConnectedAccountProvider $provider, $redirectUri = null)
+    {
+        // We just want a link to our QR page
+        return [
+            'key' => '',
+            'secret' => '',
+            'scopes' => '',
+            'redirect' => $redirectUri ?: $this->getRedirectUri($provider),
+            // 'redirect' => \XF::app()->router()->buildLink('sqrl/authenticate'),
+        ];
+    }
 
-	// We override this because AbstractProvider assumes everyone is using OAuth, for custom behavior we need something like this instead
-	public function handleAuthorization(Controller $controller, ConnectedAccountProvider $provider, $returnUrl)
-	{
-		/** @var \XF\Session\Session $session */
-		$session = \XF::app()['session.public'];
+    // We override this because AbstractProvider assumes everyone is using OAuth, for custom behavior we need something like this instead
+    public function handleAuthorization(Controller $controller, ConnectedAccountProvider $provider, $returnUrl)
+    {
+        /** @var \XF\Session\Session $session */
+        $session = \XF::app()['session.public'];
 
-		$session->set('connectedAccountRequest', [
-			'provider' => $this->providerId,
-			'returnUrl' => $returnUrl,
-		]);
-		$session->save();
+        $session->set('connectedAccountRequest', [
+            'provider' => $this->providerId,
+            'returnUrl' => $returnUrl,
+        ]);
+        $session->save();
 
-		return $controller->message('This page is not supposed to show');
-	}
+        return $controller->message('This page is not supposed to show');
+    }
 
-	public function renderAssociated(ConnectedAccountProvider $provider, \XF\Entity\User $user)
-	{
-		$data = \Sqrl\Api::getAssociationsByUserId($user->user_id);
-		return \XF::app()->templater()->renderTemplate('public:connected_account_associated_' . $provider->provider_id, [
-			'provider' => $provider,
-			'user' => $user,
-			'providerData' => $provider->getUserInfo($user),
-			'connectedAccounts' => $user->Profile->connected_accounts,
-			'sqrlData' => $data,
-		]);
-	}
+    public function renderAssociated(ConnectedAccountProvider $provider, \XF\Entity\User $user)
+    {
+        $data = \Sqrl\Api::getAssociationsByUserId($user->user_id);
+        return \XF::app()->templater()->renderTemplate('public:connected_account_associated_' . $provider->provider_id, [
+            'provider' => $provider,
+            'user' => $user,
+            'providerData' => $provider->getUserInfo($user),
+            'connectedAccounts' => $user->Profile->connected_accounts,
+            'sqrlData' => $data,
+        ]);
+    }
 }

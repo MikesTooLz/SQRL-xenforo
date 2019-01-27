@@ -8,14 +8,14 @@ use XF\Entity\User;
 
 class StorageState extends BaseStorageState
 {
-	public function __construct(ConnectedAccountProvider $provider, User $user)
-	{
-		parent::__construct($provider, $user);
-	}
+    public function __construct(ConnectedAccountProvider $provider, User $user)
+    {
+        parent::__construct($provider, $user);
+    }
 
-	public function clearToken()
-	{
-		\Sqrl\Api::removeAssociation($this->user->user_id);
-		parent::clearToken();
-	}
+    public function clearToken()
+    {
+        \Sqrl\Api::removeAssociation($this->user->user_id);
+        parent::clearToken();
+    }
 }
