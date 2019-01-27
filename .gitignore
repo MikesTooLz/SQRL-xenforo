@@ -1,13 +1,18 @@
+# Directories
 data
 install
 internal_data
 js
 library
+src/addons/Sqrl/_data
+src/addons/Sqrl/_releases
+src/addons/ThemeHouse
 src/addons/XF
 src/vendor
 src/XF
 styles
 
+# Single files
 admin.php
 cmd.php
 connected_account.php
@@ -25,6 +30,3 @@ src/config.php
 src/config.php.default
 src/index.html
 src/XF.php
-src/addons/ThemeHouse
-src/addons/Sqrl/_releases
-src/addons/Sqrl/_data
