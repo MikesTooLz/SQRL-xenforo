@@ -12,6 +12,7 @@ use XF\Pub\Controller\AbstractController;
 
 class Sqrl extends AbstractController
 {
+    /*
     public function actionRemovePassword(ParameterBag $params)
     {
         $visitor = \XF::visitor();
@@ -21,6 +22,7 @@ class Sqrl extends AbstractController
         $this->session()->save();
         return $this->message('Done');
     }
+    */
 
     public function actionAuthenticate(ParameterBag $params)
     {
