@@ -26,3 +26,5 @@ src/config.php.default
 src/index.html
 src/XF.php
 src/addons/ThemeHouse
+src/addons/Sqrl/_releases
+src/addons/Sqrl/_data
