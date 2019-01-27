@@ -15,8 +15,8 @@ This addon adds SQRL authentication to XenForo 2.0. You can read more about SQRL
 - On the server hosting the SSP server, open `regedit.exe` and navigate to `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Gibson Research\SqrlApi`
 - Set `WebServerAuthURL` to this value `https://your-xenforo-install.com/the/xf/path/?sqrl/authenticate/&token=%s`
 - Go to Setup -> Connected accounts -> SQRL
-- Enter the hostname of the SSP server. This is as seen from the web browser's perspective
-- Enter the private hostname and port of the SSP server. This is as seen from the web server's perspective
+- Enter the hostname of the SSP server (as seen from the web browser's perspective)
+- Enter the private hostname and port of the SSP server (as seen from the web server's perspective)
 - Save
 
 ## Uninstall
