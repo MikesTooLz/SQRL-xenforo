@@ -4,6 +4,7 @@ namespace Sqrl\Extend\XF\Pub\Controller;
 
 class Login extends \XF\Pub\Controller\Login
 {
+    // Ensure that SQRL is displayed separately
     public function actionIndex()
     {
         $replyView = parent::actionIndex();
@@ -19,6 +20,7 @@ class Login extends \XF\Pub\Controller\Login
         return $replyView;
     }
 
+    // Ensure that SQRL is displayed separately
     public function actionLogin()
     {
         $replyView = parent::actionLogin();

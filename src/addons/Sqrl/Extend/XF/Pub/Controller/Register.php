@@ -4,6 +4,7 @@ namespace Sqrl\Extend\XF\Pub\Controller;
 
 class Register extends \XF\Pub\Controller\Register
 {
+    // Ensure that SQRL is displayed separately
     public function actionIndex()
     {
         $replyView = parent::actionIndex();
@@ -41,6 +42,7 @@ class Register extends \XF\Pub\Controller\Register
         // We know this variable is only set if we are already registering with SQRL
         if (\Sqrl\GlobalState::$allowRegisterWithoutEmail)
         {
+            // Set the user to email validated despite the missing email
             $user->set('user_state', 'valid');
             $user->save();
         }
