@@ -1,13 +1,13 @@
 {
     "group_name": "sqrl",
-    "title": "SQRL Logo",
-    "description": "",
+    "title": "Asset path",
+    "description": "The root path for SQRL images and fonts. Excluding trailing slash.",
     "property_type": "value",
     "css_components": [],
     "value_type": "string",
     "value_parameters": "",
     "depends_on": "",
     "value_group": "",
-    "property_value": "styles/default/sqrl/logo.png",
+    "property_value": "styles/default/sqrl",
     "display_order": 0
 }

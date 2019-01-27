@@ -27,12 +27,12 @@
     "public/connected_account_associated_sqrl.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "4e6638f058a7e7367b8f737c322b5653"
+        "hash": "bf139e1d5d502a7662372a82e2cb2f92"
     },
     "public/sqrl.less": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "2075dd03eac66c7115bd3304bf1a10e2"
+        "hash": "1e64d4c62888e4f160d4f8625535e79d"
     },
     "public/sqrl_macros.html": {
         "version_id": 0,

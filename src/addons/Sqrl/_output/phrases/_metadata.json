@@ -95,29 +95,17 @@
         "version_string": "1.0.0",
         "hash": "ede5aa8a62f221db3a648d1af9ab8030"
     },
-    "style_prop.sqrlFonts.txt": {
+    "style_prop.sqrlAsset.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "f9355e9a912ae63da10bc3c0479ac3c0"
+        "hash": "a3af86ebe3277c67f4e97de41243bb31"
     },
-    "style_prop.sqrlLogo.txt": {
+    "style_prop_desc.sqrlAsset.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "164cc23e70898307fbce800c1a7c815b"
-    },
-    "style_prop_desc.sqrlFonts.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "efec42a06c3b08e897e9b9c743e00c49"
-    },
-    "style_prop_desc.sqrlLogo.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+        "hash": "e74f5a82fc81b60ca7ef0a4c4b7d1f42"
     },
     "style_prop_group.sqrl.txt": {
         "global_cache": false,

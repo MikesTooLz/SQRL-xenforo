@@ -1,1 +1,0 @@
-The path for SQRL logo fonts, excluding the final slash '/'.

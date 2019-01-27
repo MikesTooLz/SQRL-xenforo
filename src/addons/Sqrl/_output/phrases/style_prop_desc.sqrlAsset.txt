@@ -1,0 +1,1 @@
+The root path for SQRL images and fonts. Excluding trailing slash.
