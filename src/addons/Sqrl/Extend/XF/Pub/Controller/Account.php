@@ -4,6 +4,7 @@ namespace Sqrl\Extend\XF\Pub\Controller;
 
 class Account extends \XF\Pub\Controller\Account
 {
+    // Ensure that SQRL is displayed separately
     public function actionConnectedAccount()
     {
         $replyView = parent::actionConnectedAccount();
@@ -13,7 +14,6 @@ class Account extends \XF\Pub\Controller\Account
         {
             $sqrl = $providers['sqrl'];
             $handler = $sqrl->getHandler();
-            // $redirect = $this->getDynamicRedirect();
             $redirect = $this->buildLink('account/connected-account');
             $handler->handleAuthorization($this, $sqrl, $redirect);
         }
@@ -40,6 +40,10 @@ class Account extends \XF\Pub\Controller\Account
         return parent::actionConnectedAccountDisassociate($params);
     }
 
+    /**
+     * We override the email change page to display a special one where the user does not have to
+     * do password verification but rather verify their identity using SQRL.
+     */
     public function actionEmail()
     {
         $visitor = \XF::visitor();
@@ -50,17 +54,14 @@ class Account extends \XF\Pub\Controller\Account
             return parent::actionEmail();
         }
 
+        /**
+         * @var \Sqrl\ControllerPlugin\Verify $verify
+         */
+        $verify = $this->plugin('Sqrl:Verify');
         // Do SQRL verification first
-        if ($this->session()->get('lastSqrlAuthentication') < \XF::$time - 5 * 60)
+        if (!$verify->isVerified())
         {
-            $sqrl = $this->assertProviderExists('sqrl');
-            $handler = $sqrl->getHandler();
-            $returnUrl = $this->buildLink('account/email');
-            $handler->handleAuthorization($this, $sqrl, $returnUrl);
-            $this->session()->set('sqrlAction', 'verify');
-            $this->session()->save();
-            $view = $this->view('XF:Account\SqrlVerify', 'sqrl_verify', ['sqrl' => $sqrl]);
-            return $this->addAccountWrapperParams($view, 'account_details');
+            return $verify->verify($this->buildLink('account/email'));
         }
 
         if ($this->isPost())
@@ -80,6 +81,10 @@ class Account extends \XF\Pub\Controller\Account
         }
     }
 
+    /**
+     * This function is copy-pasted from the parent class. We had to remove the password
+     * verification but the rest is the same...
+     */
     protected function emailSaveProcess(\XF\Entity\User $visitor)
     {
         // Only override this method if we don't have SQRL and don't have a password
@@ -123,6 +128,11 @@ class Account extends \XF\Pub\Controller\Account
         return $form;
     }
 
+
+    /**
+     * We override the password change page to display a special one where the user does not have
+     * to do password verification but rather verify their identity using SQRL.
+     */
     public function actionSecurity()
     {
         $lastSqrlAuthentication = $this->session()->get('lastSqrlAuthentication');
@@ -134,17 +144,14 @@ class Account extends \XF\Pub\Controller\Account
             return $reply;
         }
 
+        /**
+         * @var \Sqrl\ControllerPlugin\Verify $verify
+         */
+        $verify = $this->plugin('Sqrl:Verify');
         // Do SQRL verification first
-        if ($this->session()->get('lastSqrlAuthentication') < \XF::$time - 5 * 60)
+        if (!$verify->isVerified())
         {
-            $sqrl = $this->assertProviderExists('sqrl');
-            $handler = $sqrl->getHandler();
-            $returnUrl = $this->buildLink('account/security');
-            $handler->handleAuthorization($this, $sqrl, $returnUrl);
-            $this->session()->set('sqrlAction', 'verify');
-            $this->session()->save();
-            $view = $this->view('XF:Account\SqrlVerify', 'sqrl_verify', ['sqrl' => $sqrl]);
-            return $this->addAccountWrapperParams($view, 'account_security');
+            return $verify->verify($this->buildLink('account/security'));
         }
 
         // This ensures a template modification renders without 'old password'
