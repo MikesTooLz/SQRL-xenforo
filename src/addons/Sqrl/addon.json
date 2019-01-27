@@ -1,7 +1,7 @@
 {
     "legacy_addon_id": "",
     "title": "Secure Quick Reliable Login - SQRL",
-    "description": "",
+    "description": "Adds functionality to login using SQRL.",
     "version_id": 0,
     "version_string": "1.0.0",
     "dev": "",
@@ -10,5 +10,5 @@
     "support_url": "",
     "extra_urls": [],
     "require": [],
-    "icon": ""
+    "icon": "icon.png"
 }
