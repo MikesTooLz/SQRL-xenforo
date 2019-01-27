@@ -5,7 +5,8 @@
         "styles/default/sqrl/font/sqrl.svg",
         "styles/default/sqrl/font/sqrl.woff",
         "styles/default/sqrl/font/sqrl.eot",
-        "styles/default/sqrl/font/sqrl.ttf"
+        "styles/default/sqrl/font/sqrl.ttf",
+        "README.md"
     ],
     "minify": [
         "js/sqrl.js"
