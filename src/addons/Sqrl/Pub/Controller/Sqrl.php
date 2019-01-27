@@ -51,6 +51,8 @@ class Sqrl extends AbstractController
                 \Sqrl\Api::removeAssociation($userId, $sqrlId);
             }
         }
+
+        // For verification of identity during a session
         $sqrlAction = $session->get('sqrlAction');
         if ($sqrlAction == 'verify')
         {
@@ -67,6 +69,8 @@ class Sqrl extends AbstractController
                 return $this->message("You are using the wrong SQRL id.");
             }
         }
+
+        // A user was found associated with this SQRL id
         if ($user)
         {
             if ($this->isLoggedIn())
@@ -89,6 +93,7 @@ class Sqrl extends AbstractController
             }
         }
 
+        // Store the SQRL ID so XenForo knows about it
         $provider = $this->finder('XF:ConnectedAccountProvider')
             ->whereId('sqrl')
             ->fetchOne();
@@ -102,6 +107,7 @@ class Sqrl extends AbstractController
         $session->set('connectedAccountRequest', $connectedAccountRequest);
         $session->save();
 
+        // Redirect back to connected-accounts to let it know that we succeeded
         $redirect = \XF::app()->router('public')->buildLink('register/connected-accounts', $provider);
 
         return $this->redirect($redirect);
