@@ -1,6 +1,11 @@
 {
     "additional_files": [
-        "js/sqrl.js"
+        "js/sqrl.js",
+        "styles/default/sqrl/logo.png",
+        "styles/default/sqrl/font/sqrl.svg",
+        "styles/default/sqrl/font/sqrl.woff",
+        "styles/default/sqrl/font/sqrl.eot",
+        "styles/default/sqrl/font/sqrl.ttf"
     ],
     "minify": [
         "js/sqrl.js"
