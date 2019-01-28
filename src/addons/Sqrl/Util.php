@@ -4,8 +4,12 @@ namespace Sqrl;
 
 abstract class Util
 {
-    public static function separateSqrlFromProviders(\XF\Mvc\Reply\View $replyView)
+    public static function separateSqrlFromProviders($replyView)
     {
+        if (!($replyView instanceof \XF\Mvc\Reply\View))
+        {
+            return null;
+        }
         $providers = $replyView->getParam('providers');
         // Separate out the SQRL provider and pass it separately to our template
         if (isset($providers['sqrl']))
