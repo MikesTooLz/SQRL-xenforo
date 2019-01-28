@@ -52,10 +52,10 @@ console = console || {log: function(){}, warn: function(){}};
             var link = 'sqrl://' + this.options.hostname + '/cli.sqrl?' + this.latestData.nutAndCan;
             var png = 'https://' + this.options.hostname + '/png.sqrl?nut=' + this.latestData.nut;
 
-            this.$target.find('> a.button')
+            this.$target.find('a.button')
                 .attr('href', link)
                 .click(this.linkClicked.bind(this));
-            this.$target.find('> img').attr('src', png);
+            this.$target.find('img').attr('src', png);
         },
 
         linkClicked: function(e) {

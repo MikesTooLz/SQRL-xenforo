@@ -32,12 +32,12 @@
     "public/sqrl.less": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "1e64d4c62888e4f160d4f8625535e79d"
+        "hash": "08cba44d199550ca4f1f073f00c93a68"
     },
     "public/sqrl_macros.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "416f559260cc5a7ff3796d547026a774"
+        "hash": "e63b9f384610fc766882900e442797bd"
     },
     "public/sqrl_verify.html": {
         "version_id": 0,

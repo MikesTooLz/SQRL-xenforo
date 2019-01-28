@@ -40,13 +40,19 @@
 		data-hostname="{$data.options.hostname}"
 		class="sqrl-container"
 	>
-		<xf:button href="sqrl://todo" class="button--provider button--provider--{$data.provider_id}">
-			{{ phrase('con_acc.sqrl') }}
-		</xf:button>
-		<span>
-			&larr; Click or scan SQRL QR code &rarr;
-		</span>
-		<img />
+		<div class="frame">
+			<xf:button href="sqrl://todo" class="button--provider button--provider--{$data.provider_id}">
+				{{ phrase('con_acc.sqrl') }}
+			</xf:button>
+			<span>
+				&larr; Click or scan SQRL QR code &rarr;
+			</span>
+			<img />
+		</div>
+
+		<noscript>
+			<div class="error">SQRL authentication requires JavaScript to function.</div>
+		</noscript>
 	</div>
 	<xf:js prod="sqrl.min.js" dev="sqrl.js" />
 	<xf:css src="sqrl.less" />

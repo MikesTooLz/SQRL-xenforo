@@ -10,27 +10,41 @@
 }
 
 .sqrl-container {
-	overflow: hidden;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	width: 400px;
 
-	> * {
-		display: block;
+	.frame {
+		overflow: hidden;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	
+		> * {
+			display: block;
+		}
+	
+		> span {
+			margin: 0 15px;
+			flex: 1 1 0px;
+			text-align: center;
+		}
+	
+		img {
+			width: 66px;
+			height: 66px;
+		}
 	}
 
-	> span {
-		margin: 0 15px;
+	.error {
+		margin-top: 5px;
+		font-size: 12px;
+		text-align: center;
+		color: #ec2d2d;
 	}
 
-	img {
-		width: 66px;
-		height: 66px;
-	}
-}	
+}
 
 .sqrl-block-body .formRow.formRow--button > dt {
 	padding-top: 15px;
