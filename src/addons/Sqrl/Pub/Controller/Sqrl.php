@@ -70,29 +70,6 @@ class Sqrl extends AbstractController
             }
         }
 
-        // A user was found associated with this SQRL id
-        if ($user)
-        {
-            if ($this->isLoggedIn())
-            {
-                if ($user->user_id != $visitor->user_id)
-                {
-                    return $this->message("This SQRL account is already associated with another user. If you want to associate it with this account, you must first sign in using this SQRL account and disassociate it with the other account.");
-                }
-                else
-                {
-                    return $this->message("This SQRL account is already associated with you");
-                }
-            }
-            else
-            {
-                // We are logging in with SQRL
-                $session->changeUser($user);
-                \XF::setVisitor($user);
-                $visitor = \XF::visitor();
-            }
-        }
-
         // Store the SQRL ID so XenForo knows about it
         $provider = $this->finder('XF:ConnectedAccountProvider')
             ->whereId('sqrl')
