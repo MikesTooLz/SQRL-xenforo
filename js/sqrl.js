@@ -24,8 +24,16 @@ console = console || {log: function(){}, warn: function(){}};
             $.ajax({
                 url:      'https://' + this.options.hostname + '/nut.sqrl', 
                 success:  this.gotNut.bind(this),
+                error:    this.failedNut.bind(this),
                 dataType: 'text',
             });
+        },
+
+        failedNut: function(jqXHR, textStatus, errorThrown)
+        {
+            var errorEl = $('<div class="error"></div>');
+            errorEl.text('Failed to communicate with SQRL. Please refresh if you need SQRL authentication.');
+            this.$target.append(errorEl);
         },
 
         gotNut: function (nutAndCan, textStatus, jqXHR) {
@@ -52,6 +60,7 @@ console = console || {log: function(){}, warn: function(){}};
             var link = 'sqrl://' + this.options.hostname + '/cli.sqrl?' + this.latestData.nutAndCan;
             var png = 'https://' + this.options.hostname + '/png.sqrl?nut=' + this.latestData.nut;
 
+            this.$target.find('.frame').removeClass('disable');
             this.$target.find('a.button')
                 .attr('href', link)
                 .click(this.linkClicked.bind(this));

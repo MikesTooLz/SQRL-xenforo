@@ -12,6 +12,7 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
 - Toggle requirement of email on registration
 - Provides altered password and email change dialogs to accomodate users without either
 - Displays error if browser has scripting disabled
+- Displays error if communication with SSP server fails
 
 ## Requirements
 
