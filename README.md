@@ -1,6 +1,8 @@
+![SQRL logo](src/addons/Sqrl/icon.png)
+
 # SQRL for XenForo
 
-![SQRL logo](src/addons/Sqrl/icon.png)
+![SQRL screenshot](docs/register-screenshot.png)
 
 This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQRL from [Gibson Research Corporation](https://www.grc.com/sqrl/sqrl.htm).
 
