@@ -36,14 +36,26 @@ console = console || {log: function(){}, warn: function(){}};
             });
         },
 
+        clearError: function()
+        {
+            if (this.lastErrorEl)
+            {
+                this.lastErrorEl.remove();
+                this.lastErrorEl = null;
+            }
+        },
+
         failedNut: function(jqXHR, textStatus, errorThrown)
         {
+            this.clearError();
             var errorEl = $('<div class="error"></div>');
             errorEl.text('Failed to communicate with SQRL. Please refresh if you need SQRL authentication.');
             this.$target.append(errorEl);
+            this.lastErrorEl = errorEl;
         },
 
         gotNut: function (nutAndCan, textStatus, jqXHR) {
+            this.clearError();
             var nut;
             var nameAndValuePairs = nutAndCan.split('&');
             for (var i = 0; i < nameAndValuePairs.length; i++)
