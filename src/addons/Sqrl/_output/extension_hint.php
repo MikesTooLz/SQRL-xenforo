@@ -25,3 +25,8 @@ namespace Sqrl\Extend\XF\Repository
 {
 	class XFCP_ConnectedAccount extends \XF\Repository\ConnectedAccount {}
 }
+
+namespace Sqrl\Extend\XF\Service\User
+{
+	class XFCP_DeleteCleanUp extends \XF\Service\User\DeleteCleanUp {}
+}
