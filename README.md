@@ -6,6 +6,13 @@
 
 This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQRL from [Gibson Research Corporation](https://www.grc.com/sqrl/sqrl.htm).
 
+## Features
+
+- Register/login with SQRL
+- Toggle requirement of email on registration
+- Provides altered password and email change dialogs to accomodate users without either
+- Displays error if browser has scripting disabled
+
 ## Requirements
 
 - XenForo 2.0 using HTTPS
