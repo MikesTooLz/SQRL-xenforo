@@ -1,0 +1,9 @@
+{
+    "template": "connected_account_macros",
+    "description": "Explain to the user he will lose access to his account when disassociating without email and password",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:set var=\"$explain\" value=\"{{ (!$hasPassword && count($xf.visitor.Profile.connected_accounts) == 1) ? phrase('disassociating_with_all_accounts_cause_password_emailed_x', {'email': $xf.visitor.email}) : '' }}\" />",
+    "replace": "<xf:if is=\"{{ $xf.visitor.email == '' && !$hasPassword && count($xf.visitor.Profile.connected_accounts) == 1 }}\">\n\t<xf:set var=\"$explain\" value=\"{{ phrase('disassociating_with_all_accounts_make_account_inaccessible') }}\" />\n<xf:else />\n$0\n</xf:if>"
+}

@@ -8,6 +8,9 @@
     "public/sqrlAllowRegisterWithoutEmail.json": {
         "hash": "ac8830bbbc6574f013e4000869349b78"
     },
+    "public/sqrlExplainDisassociate.json": {
+        "hash": "741c2dae3e1ad4347ad75c6069fe0d2d"
+    },
     "public/sqrlLoginBlock.json": {
         "hash": "30966a6438b8cce39f3daf65028867f2"
     },
