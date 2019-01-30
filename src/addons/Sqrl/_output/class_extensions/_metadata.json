@@ -2,8 +2,8 @@
     "XF-ControllerPlugin-Error_Sqrl-Extend-XF-ControllerPlugin-Error.json": {
         "hash": "95e83fed476337608e8095efcfdcf2e3"
     },
-    "XF-Entity-ConnectedAccountProvider_Sqrl-Extend-XF-Entity-ConnectedAccountProvider.json": {
-        "hash": "5d1e6018847b62a097bd92c0c6dbbb77"
+    "XF-Entity-UserConnectedAccount_Sqrl-Extend-XF-Entity-UserConnectedAccount.json": {
+        "hash": "7bf4a9e8ca07d2b7ab841b9719504ed1"
     },
     "XF-Entity-User_Sqrl-Extend-XF-Entity-User.json": {
         "hash": "e148902deb56d7d5403283b0a4a27c8e"
@@ -16,9 +16,6 @@
     },
     "XF-Pub-Controller-Register_Sqrl-Extend-XF-Pub-Controller-Register.json": {
         "hash": "c78cd56575c35be922c8bc4209c70fba"
-    },
-    "XF-Repository-ConnectedAccount_Sqrl-Extend-XF-Repository-ConnectedAccount.json": {
-        "hash": "89f36cc6e9102520536d9f422ebec0a5"
     },
     "XF-Service-User-DeleteCleanUp_Sqrl-Extend-XF-Service-User-DeleteCleanUp.json": {
         "hash": "ef86a672560e19c7ff3415a143c11693"

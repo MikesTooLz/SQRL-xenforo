@@ -1,6 +1,0 @@
-{
-    "from_class": "XF\\Entity\\ConnectedAccountProvider",
-    "to_class": "Sqrl\\Extend\\XF\\Entity\\ConnectedAccountProvider",
-    "execute_order": 10,
-    "active": true
-}

@@ -38,26 +38,13 @@ class Sqrl extends AbstractController
         // Check if we have a user
         $cps = \Sqrl\Api::cps($token);
         $sqrlId = $cps['user'];
-        $user = null;
-        if (isset($cps['acct']))
-        {
-            $userId = $cps['acct'];
-            $user = $this->finder('XF:User')
-                ->whereId($userId)
-                ->fetchOne();
-            if (!$user)
-            {
-                // User must have been deleted without being removed from the SQRL database.
-                \Sqrl\Api::removeAssociation($userId, $sqrlId);
-            }
-        }
 
         // For verification of identity during a session
         $sqrlAction = $session->get('sqrlAction');
         if ($sqrlAction == 'verify')
         {
             $this->session()->set('sqrlAction', '');
-            if ($user && $user->user_id == $visitor->user_id)
+            if (isset($visitor->ConnectedAccounts['sqrl']) && $visitor->ConnectedAccounts['sqrl']->provider_key == $sqrlId)
             {
                 $this->session()->set('lastSqrlAuthentication', \XF::$time);
                 $this->session()->save();

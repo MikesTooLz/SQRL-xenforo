@@ -3,6 +3,7 @@
 namespace Sqrl\ConnectedAccount\ProviderData;
 
 use XF\ConnectedAccount\ProviderData\AbstractProviderData;
+use XF\ConnectedAccount\Storage\StorageState;
 
 class Sqrl extends AbstractProviderData
 {
@@ -13,7 +14,7 @@ class Sqrl extends AbstractProviderData
 
     public function getProviderKey()
     {
-        return 'sqrl_provider_key';
+        return $this->storageState->retrieveToken()->getAccessToken();
     }
 
     public function getUsername()
@@ -39,5 +40,10 @@ class Sqrl extends AbstractProviderData
     public function getAvatarUrl()
     {
         return null;
+    }
+
+    public function getExtraData()
+    {
+        return ['token' => ''];
     }
 }

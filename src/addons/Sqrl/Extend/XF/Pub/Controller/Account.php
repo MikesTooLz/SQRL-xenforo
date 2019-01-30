@@ -22,25 +22,6 @@ class Account extends \XF\Pub\Controller\Account
     }
 
     /**
-     * This function should never be necessary. However, to prevent any sort of desync between the
-     * SQRL DB and the XenForo DB, we ensure that the association is properly deleted no matter
-     * what when the user tries to delete it.
-     */
-    public function actionConnectedAccountDisassociate(\XF\Mvc\ParameterBag $params)
-    {
-        $this->assertPostOnly();
-
-        $visitor = \XF::visitor();
-        $auth = $visitor->Auth->getAuthenticationHandler();
-        if (!$auth)
-        {
-            return $this->noPermission();
-        }
-        \Sqrl\Api::removeAssociation($visitor->user_id);
-        return parent::actionConnectedAccountDisassociate($params);
-    }
-
-    /**
      * We override the email change page to display a special one where the user does not have to
      * do password verification but rather verify their identity using SQRL.
      */

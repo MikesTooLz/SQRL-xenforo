@@ -21,17 +21,6 @@ class Sqrl extends AbstractProvider
         return 'Sqrl:ProviderData\\' . $this->getOAuthServiceName();
     }
 
-    /**
-     * @param ConnectedAccountProvider $provider
-     * @param User $user
-     *
-     * @return StorageState
-     */
-    public function getStorageState(ConnectedAccountProvider $provider, User $user)
-    {
-        return new \Sqrl\StorageState($provider, $user);
-    }
-
     public function getDefaultOptions()
     {
         return [
@@ -65,7 +54,6 @@ class Sqrl extends AbstractProvider
             'secret' => '',
             'scopes' => '',
             'redirect' => $redirectUri ?: $this->getRedirectUri($provider),
-            // 'redirect' => \XF::app()->router()->buildLink('sqrl/authenticate'),
         ];
     }
 
@@ -82,17 +70,5 @@ class Sqrl extends AbstractProvider
         $session->save();
 
         return $controller->message('This page is not supposed to show');
-    }
-
-    public function renderAssociated(ConnectedAccountProvider $provider, \XF\Entity\User $user)
-    {
-        $data = \Sqrl\Api::getAssociationsByUserId($user->user_id);
-        return \XF::app()->templater()->renderTemplate('public:connected_account_associated_' . $provider->provider_id, [
-            'provider' => $provider,
-            'user' => $user,
-            'providerData' => $provider->getUserInfo($user),
-            'connectedAccounts' => $user->Profile->connected_accounts,
-            'sqrlData' => $data,
-        ]);
     }
 }
