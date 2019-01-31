@@ -26,8 +26,7 @@ console = console || {log: function(){}, warn: function(){}};
             setInterval(this.getNut.bind(this), 60 * 1000);
         },
 
-        getNut()
-        {
+        getNut: function() {
             $.ajax({
                 url:      'https://' + this.options.hostname + '/nut.sqrl', 
                 success:  this.gotNut.bind(this),
