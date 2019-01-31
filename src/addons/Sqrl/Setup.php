@@ -6,6 +6,8 @@ use XF\AddOn\AbstractSetup;
 
 class Setup extends AbstractSetup
 {
+    use \XF\AddOn\StepRunnerUpgradeTrait;
+
     public function install(array $stepParams = [])
     {
         $db = $this->db();
@@ -14,8 +16,14 @@ class Setup extends AbstractSetup
             ('sqrl', 'Sqrl:Provider\\\\Sqrl', 80, '')");
     }
 
-    public function upgrade(array $stepParams = [])
+    public function upgrade1Step1()
     {
+        $db = $this->db();
+        // Remove invalid singleton token
+        $db->query("DELETE FROM `xf_user_connected_account`
+            WHERE `provider` = 'sqrl'
+            AND `provider_key` = 'sqrl_provider_key'
+        ");
     }
 
     public function uninstall(array $stepParams = [])
