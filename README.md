@@ -36,6 +36,7 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
 - Navigate to Admin CP -> Add-ons and click 'Uninstall' on SQRL
 - Delete these items
     - `js/sqrl.js`
+    - `js/sqrl.min.js`
     - `styles/default/sqrl`
     - `src/addons/Sqrl`
 - Run this query in the database to delete all the identity tokens:
