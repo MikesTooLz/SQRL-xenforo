@@ -35,9 +35,9 @@
         "hash": "69e021e1028b84af7cc57e53878338dd"
     },
     "public/sqrl_macros.html": {
-        "version_id": 2,
-        "version_string": "1.1.1",
-        "hash": "e306eeee3b6776a5c5f55cd0e4577bb5"
+        "version_id": 4,
+        "version_string": "1.1.3",
+        "hash": "93fdd913a0c7b616804df43e056a2bfa"
     },
     "public/sqrl_verify.html": {
         "version_id": 0,
