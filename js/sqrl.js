@@ -92,7 +92,6 @@ console = console || {log: function(){}, warn: function(){}};
                 .replace(/=+$/, "");
             var probeImage = new Image();
             var probeError = function (err) {
-                console.log('Probe error', err);
                 setTimeout(
                     function () {
                         probeImage.src = 'http://localhost:25519/' + Date.now() + '.gif';
@@ -102,7 +101,6 @@ console = console || {log: function(){}, warn: function(){}};
             };
             probeImage.onerror = probeError;
             probeImage.onload = function() {
-                console.log('Probe load');
                 document.location.href = 'http://localhost:25519/' + encodedSqrlUrl;
             };
             probeError();
@@ -117,12 +115,10 @@ console = console || {log: function(){}, warn: function(){}};
             $.ajax({
                 url: 'https://' + this.options.hostname + '/pag.sqrl',
                 success: this.handleQrAuthCheckResponse.bind(this),
-                error: function (jqXHR, textStatus, errorThrown) { console.log('pag.sqrl ->', jqXHR.status); }
             });
         },
 
         handleQrAuthCheckResponse: function (body, textStatus, jqXHR) {
-            console.log('pag.sqrl ->', body);
             document.location.href = body;
         }
     });
