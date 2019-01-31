@@ -113,7 +113,7 @@ console = console || {log: function(){}, warn: function(){}};
                 clearInterval(this.qrAuthTimer);
                 this.qrAuthTimer = null;
             }
-            this.qrAuthTimer = setInterval(this.qrAuthCheck.bind(this), 3000);
+            this.qrAuthTimer = setInterval(this.qrAuthCheck.bind(this), 500);
         },
 
         qrAuthCheck: function() {
