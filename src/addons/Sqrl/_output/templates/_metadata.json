@@ -2,7 +2,7 @@
     "admin/connected_account_provider_sqrl.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "4c9f070ddf72a13b0e05f477af041b1a"
+        "hash": "af5ef7bd1a058c06ab27a7adc5676225"
     },
     "public/_widget_thuix_aboutUsWidget.html": {
         "version_id": 0,
@@ -37,7 +37,7 @@
     "public/sqrl_macros.html": {
         "version_id": 0,
         "version_string": "1.0.0",
-        "hash": "30560e4d4b6e5f471bb8fc2ce4db61d0"
+        "hash": "4051dc56a86dbd4db356b36f3112d7a3"
     },
     "public/sqrl_verify.html": {
         "version_id": 0,

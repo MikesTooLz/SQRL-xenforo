@@ -9,6 +9,7 @@ console = console || {log: function(){}, warn: function(){}};
     XF.SqrlLogin = XF.Element.newHandler({
         options: {
             hostname: null,
+            slotId: '',
         },
 
         init: function () {
@@ -28,7 +29,7 @@ console = console || {log: function(){}, warn: function(){}};
 
         getNut: function() {
             $.ajax({
-                url:      'https://' + this.options.hostname + '/nut.sqrl', 
+                url:      'https://' + this.options.hostname + '/nut.sqrl?' + this.options.slotId,
                 success:  this.gotNut.bind(this),
                 error:    this.failedNut.bind(this),
                 dataType: 'text',

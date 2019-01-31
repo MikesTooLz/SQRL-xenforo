@@ -3,6 +3,13 @@
 	hint="{{ phrase('required') }}"
 	explain="{{ phrase('con_acc_sqrl_hostname_explain') }}" />
 
+<xf:numberboxrow name="options[slot_id]" value="{$options.slot_id}"
+	label="{{ phrase('slot_id') }}"
+	hint="{{ phrase('optional') }}"
+	min="0"
+	max="9"
+	explain="{{ phrase('con_acc_sqrl_slot_id_explain') }}" />
+
 <xf:textboxrow name="options[private_hostname]" value="{$options.private_hostname}"
 	label="{{ phrase('private_hostname') }}"
 	hint="{{ phrase('required') }}"
