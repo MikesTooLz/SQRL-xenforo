@@ -117,6 +117,10 @@ console = console || {log: function(){}, warn: function(){}};
         },
 
         qrAuthCheck: function() {
+            if (this.$target.find('img').is(":hidden") || document.hidden)
+            {
+                return;
+            }
             $.ajax({
                 url: 'https://' + this.options.hostname + '/pag.sqrl?nut=' + this.latestData.nut,
                 success: this.handleQrAuthCheckResponse.bind(this),
