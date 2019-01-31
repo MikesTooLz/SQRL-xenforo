@@ -131,6 +131,12 @@
         "version_string": "1.0.0",
         "hash": "d3b432eb42925ddf8d02749a786c4fbb"
     },
+    "you_have_authenticated_with_different_sqrl_id.txt": {
+        "global_cache": false,
+        "version_id": 0,
+        "version_string": "1.0.0",
+        "hash": "028ed74536b93c8cdff80fbc6e787fcc"
+    },
     "you_must_verify_identity_before_accessing_page.txt": {
         "global_cache": false,
         "version_id": 0,

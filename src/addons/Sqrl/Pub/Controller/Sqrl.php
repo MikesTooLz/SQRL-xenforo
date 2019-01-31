@@ -53,7 +53,7 @@ class Sqrl extends AbstractController
             else
             {
                 $this->session()->save();
-                return $this->message("You are using the wrong SQRL id.");
+                return $this->message(\XF::phrase('you_have_authenticated_with_different_sqrl_id'));
             }
         }
 
