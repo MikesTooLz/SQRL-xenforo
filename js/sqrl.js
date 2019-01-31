@@ -70,7 +70,6 @@ console = console || {log: function(){}, warn: function(){}};
 
             this.renderNut();
 
-            // Disabled to reduce noise
             this.startQrAuthCheck();
         },
 
@@ -108,12 +107,17 @@ console = console || {log: function(){}, warn: function(){}};
         },
 
         startQrAuthCheck: function() {
-            setInterval(this.qrAuthCheck.bind(this), 3000);
+            if (this.qrAuthTimer)
+            {
+                clearInterval(this.qrAuthTimer);
+                this.qrAuthTimer = null;
+            }
+            this.qrAuthTimer = setInterval(this.qrAuthCheck.bind(this), 3000);
         },
 
         qrAuthCheck: function() {
             $.ajax({
-                url: 'https://' + this.options.hostname + '/pag.sqrl',
+                url: 'https://' + this.options.hostname + '/pag.sqrl?' + this.latestData.nut,
                 success: this.handleQrAuthCheckResponse.bind(this),
             });
         },
