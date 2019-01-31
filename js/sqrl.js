@@ -118,7 +118,7 @@ console = console || {log: function(){}, warn: function(){}};
 
         qrAuthCheck: function() {
             $.ajax({
-                url: 'https://' + this.options.hostname + '/pag.sqrl?' + this.latestData.nut,
+                url: 'https://' + this.options.hostname + '/pag.sqrl?nut=' + this.latestData.nut,
                 success: this.handleQrAuthCheckResponse.bind(this),
             });
         },
