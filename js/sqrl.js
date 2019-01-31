@@ -120,6 +120,8 @@ console = console || {log: function(){}, warn: function(){}};
             $.ajax({
                 url: 'https://' + this.options.hostname + '/pag.sqrl?nut=' + this.latestData.nut,
                 success: this.handleQrAuthCheckResponse.bind(this),
+                // Prevents the annoying ajax animation from showing up all the time
+                global: false,
             });
         },
 
