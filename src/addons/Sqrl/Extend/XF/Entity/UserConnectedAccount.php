@@ -8,7 +8,7 @@ class UserConnectedAccount extends \XF\Entity\UserConnectedAccount
     {
         if ($this->provider == 'sqrl')
         {
-            \Sqrl\Api::removeSqrlAccount($this->provider_key);
+            \Sqrl\Api::removeAssociation(\Sqrl\Api::addPrefix($this->user_id));
         }
 
         parent::_preDelete();

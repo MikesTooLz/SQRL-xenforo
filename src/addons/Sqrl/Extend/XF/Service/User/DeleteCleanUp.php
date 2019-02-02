@@ -8,18 +8,11 @@ class DeleteCleanUp extends \XF\Service\User\DeleteCleanUp
     {
         parent::__construct($app, $userId, $userName);
 
-        $this->steps = array_merge(['stepCleanUpSqrl'], $this->steps);
+        $this->steps[] = 'stepCleanUpSqrl';
     }
 
     protected function stepCleanUpSqrl()
     {
-        $sqrl = $this->app->finder('XF::UserConnectedAccount')
-            ->where('user_id', $this->userId)
-            ->where('provider', 'sqrl')
-            ->fetchOne();
-        if ($sqrl)
-        {
-            \Sqrl\Api::removeSqrlAccount($sqrl->provider_key);
-        }
+        \Sqrl\Api::removeAssociation(\Sqrl\Api::addPrefix($this->userId));
     }
 }

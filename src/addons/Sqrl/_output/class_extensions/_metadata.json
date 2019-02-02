@@ -17,6 +17,9 @@
     "XF-Pub-Controller-Register_Sqrl-Extend-XF-Pub-Controller-Register.json": {
         "hash": "c78cd56575c35be922c8bc4209c70fba"
     },
+    "XF-Repository-ConnectedAccount_Sqrl-Extend-XF-Repository-ConnectedAccount.json": {
+        "hash": "89f36cc6e9102520536d9f422ebec0a5"
+    },
     "XF-Service-User-DeleteCleanUp_Sqrl-Extend-XF-Service-User-DeleteCleanUp.json": {
         "hash": "ef86a672560e19c7ff3415a143c11693"
     }

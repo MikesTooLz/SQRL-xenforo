@@ -127,4 +127,9 @@ class Api
             'stat' => $stat,
         ]));
     }
+
+    public static function addPrefix($userId)
+    {
+        return 'xf' . $userId;
+    }
 }

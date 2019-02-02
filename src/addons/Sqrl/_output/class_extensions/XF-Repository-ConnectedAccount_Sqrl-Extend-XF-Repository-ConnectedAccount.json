@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Repository\\ConnectedAccount",
+    "to_class": "Sqrl\\Extend\\XF\\Repository\\ConnectedAccount",
+    "execute_order": 10,
+    "active": true
+}
