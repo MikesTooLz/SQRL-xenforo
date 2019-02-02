@@ -38,4 +38,10 @@ abstract class Util
         }
         return false;
     }
+
+    public static function isEnabled()
+    {
+        $sqrl = \XF::app()->finder('XF:ConnectedAccountProvider')->whereId('sqrl')->fetchOne();
+        return $sqrl && $sqrl->isUsable();
+    }
 }

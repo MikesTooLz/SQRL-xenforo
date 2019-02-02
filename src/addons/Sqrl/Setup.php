@@ -26,6 +26,22 @@ class Setup extends AbstractSetup
         ");
     }
 
+    public function upgrade5Step1()
+    {
+        if (!\Sqrl\Util::isEnabled())
+        {
+            return;
+        }
+        $db = $this->db();
+        $sqrls = $this->app->finder('XF:UserConnectedAccount')
+            ->where('provider', 'sqrl')
+            ->fetch();
+        foreach ($sqrls as $sqrl)
+        {
+            \Sqrl\Api::addUserToSqrl(\Sqrl\Api::addPrefix($sqrl->user_id), $sqrl->provider_key);
+        }
+    }
+
     public function uninstall(array $stepParams = [])
     {
         $db = $this->db();
