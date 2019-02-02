@@ -79,7 +79,7 @@ console = console || {log: function(){}, warn: function(){}};
             var png = 'https://' + this.options.hostname + '/png.sqrl?nut=' + this.latestData.nut;
 
             this.$target.find('.frame').removeClass('disable');
-            this.$target.find('a.button')
+            this.$target.find('a.button, a.image')
                 .attr('href', link)
                 .click(this.linkClicked.bind(this));
             this.$target.find('img').attr('src', png);

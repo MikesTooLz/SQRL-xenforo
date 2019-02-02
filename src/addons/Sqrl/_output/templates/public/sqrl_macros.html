@@ -48,13 +48,15 @@
 			<span>
 				&larr; Click or scan SQRL QR code &rarr;
 			</span>
-			<img />
+			<a class="image" href="sqrl://todo">
+				<img />
+			</a>
 		</div>
 
 		<noscript>
 			<div class="error">SQRL authentication requires JavaScript to function.</div>
 		</noscript>
 	</div>
-	<xf:js prod="sqrl.min.js?4" dev="sqrl.js?4" />
+	<xf:js prod="sqrl.min.js?5" dev="sqrl.js?5" />
 	<xf:css src="sqrl.less" />
 </xf:macro>
