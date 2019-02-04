@@ -1,9 +1,0 @@
-{
-    "template": "login",
-    "description": "Add SQRL block to special 'must be logged in' page",
-    "execution_order": 10,
-    "enabled": true,
-    "action": "str_replace",
-    "find": "\t<xf:form action=\"{{ link('login/login') }}\" class=\"block\">",
-    "replace": "\t<xf:macro template=\"sqrl_macros\" name=\"login_header\" arg-data=\"{}$sqrl}\" />\n\n$0"
-}
