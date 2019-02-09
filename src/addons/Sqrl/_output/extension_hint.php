@@ -29,4 +29,5 @@ namespace Sqrl\Extend\XF\Repository
 namespace Sqrl\Extend\XF\Service\User
 {
 	class XFCP_DeleteCleanUp extends \XF\Service\User\DeleteCleanUp {}
+	class XFCP_PasswordChange extends \XF\Service\User\PasswordChange {}
 }

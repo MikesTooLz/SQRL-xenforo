@@ -22,5 +22,8 @@
     },
     "XF-Service-User-DeleteCleanUp_Sqrl-Extend-XF-Service-User-DeleteCleanUp.json": {
         "hash": "ef86a672560e19c7ff3415a143c11693"
+    },
+    "XF-Service-User-PasswordChange_Sqrl-Extend-XF-Service-User-PasswordChange.json": {
+        "hash": "4cb8d57f8905237bc7ec1f5b6a5f24de"
     }
 }
