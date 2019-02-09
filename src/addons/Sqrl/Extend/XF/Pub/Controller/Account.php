@@ -2,6 +2,8 @@
 
 namespace Sqrl\Extend\XF\Pub\Controller;
 
+use XF\Mvc\ParameterBag;
+
 class Account extends \XF\Pub\Controller\Account
 {
     // Ensure that SQRL is displayed separately
@@ -176,4 +178,30 @@ class Account extends \XF\Pub\Controller\Account
         return $this->service('XF:User\PasswordChange', $visitor, $input['password']);
     }
 
+    /**
+     * We want to prevent users from removing their SQRL ID in case they have no password, no
+     * email and no other connected accounts to avoid lock-out.
+     */
+    public function actionConnectedAccountDisassociate(ParameterBag $params)
+    {
+        $this->assertPostOnly();
+
+        $visitor = \XF::visitor();
+        $auth = $visitor->Auth->getAuthenticationHandler();
+        if (!$auth)
+        {
+            return $this->noPermission();
+        }
+        
+        $connectedAccounts = $visitor->ConnectedAccounts;
+        if ($this->filter('disassociate', 'bool')
+         && !$auth->hasPassword()
+         && $visitor->email == '' 
+         && count($connectedAccounts) == 1
+        )
+        {
+            throw $this->errorException(\XF::phrase('cannot_remove_last_connected_account_without_password'));
+        }
+        return parent::actionConnectedAccountDisassociate($params);
+    }
 }

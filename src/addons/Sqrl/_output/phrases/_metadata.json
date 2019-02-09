@@ -11,6 +11,12 @@
         "version_string": "1.0.0",
         "hash": "0a8d254bc53e7dc58ca642a18137d3fe"
     },
+    "cannot_remove_last_connected_account_without_password.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "199175426c12796c3a91a673d1f16d12"
+    },
     "con_acc.sqrl.txt": {
         "global_cache": false,
         "version_id": 0,
