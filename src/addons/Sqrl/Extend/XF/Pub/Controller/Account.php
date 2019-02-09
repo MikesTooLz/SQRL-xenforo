@@ -47,7 +47,7 @@ class Account extends \XF\Pub\Controller\Account
         // Do SQRL verification first
         if (!$verify->isVerified())
         {
-            return $verify->verify($this->buildLink('account/email'));
+            return $verify->verify($this->buildLink('account/email'), 'account_details');
         }
 
         if ($this->isPost())
@@ -137,7 +137,7 @@ class Account extends \XF\Pub\Controller\Account
         // Do SQRL verification first
         if (!$verify->isVerified())
         {
-            return $verify->verify($this->buildLink('account/security'));
+            return $verify->verify($this->buildLink('account/security'), 'security');
         }
 
         // This ensures a template modification renders without 'old password'

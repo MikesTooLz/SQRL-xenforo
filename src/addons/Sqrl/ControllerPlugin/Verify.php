@@ -11,7 +11,7 @@ class Verify extends \XF\ControllerPlugin\AbstractPlugin
         return $this->session()->get('lastSqrlAuthentication') > \XF::$time - 5 * 60;
     }
 
-    public function verify($returnUrl)
+    public function verify($returnUrl, $selectedPage)
     {
         $sqrl = $this->assertProviderExists('sqrl');
         $handler = $sqrl->getHandler();
@@ -19,7 +19,7 @@ class Verify extends \XF\ControllerPlugin\AbstractPlugin
         $this->session()->set('sqrlAction', 'verify');
         $this->session()->save();
         $view = $this->view('XF:Account\SqrlVerify', 'sqrl_verify', ['sqrl' => $sqrl]);
-        return $this->addAccountWrapperParams($view, 'account_details');
+        return $this->addAccountWrapperParams($view, $selectedPage);
     }
 
     // Method stolen from the \XF\Pub\Controller\Account
