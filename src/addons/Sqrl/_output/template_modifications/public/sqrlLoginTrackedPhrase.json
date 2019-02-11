@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "{{ phrase('log_in_using') }}",
-    "replace": "{{ phrase('log_in_and_be_tracked_in_using') }}"
+    "replace": "{{ $xf.options.sqrlCentricAddTrackedNotice ? phrase('log_in_and_be_tracked_in_using') : phrase('log_in_using') }}"
 }

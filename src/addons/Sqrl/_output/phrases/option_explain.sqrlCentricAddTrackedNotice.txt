@@ -1,0 +1,1 @@
+Specifically replaces 'register faster using' with 'register (and be tracked) using' as well as 'login using' with 'login (and be tracked) using' on login and register pages.

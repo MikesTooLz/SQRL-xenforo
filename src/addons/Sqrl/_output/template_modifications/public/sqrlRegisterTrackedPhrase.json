@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "{{ phrase('register_faster_using') }}",
-    "replace": "{{ phrase('register_and_be_tracked_using') }}"
+    "replace": "{{ $xf.options.sqrlCentricAddTrackedNotice ? phrase('register_and_be_tracked_using') : phrase('register_faster_using') }}"
 }

@@ -30,9 +30,9 @@
         "hash": "381327d736085f8f947df0aa3c11e30b"
     },
     "public/sqrl.less": {
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "69e021e1028b84af7cc57e53878338dd"
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "6ce4442b1bbaa8750286de52805c951a"
     },
     "public/sqrl_macros.html": {
         "version_id": 4,

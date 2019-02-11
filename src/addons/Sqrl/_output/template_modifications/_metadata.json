@@ -2,6 +2,9 @@
     "public/sqrlAccountConnect.json": {
         "hash": "603472d30cc21a6d7d180a8e0a85d161"
     },
+    "public/sqrlAccountSidebar.json": {
+        "hash": "9a4de6f771567e5c67e9db1fb401e675"
+    },
     "public/sqrlAddExtraRegister.json": {
         "hash": "66d45f38036f57f4f9e313f8e0c39c7c"
     },
@@ -15,12 +18,12 @@
         "hash": "30966a6438b8cce39f3daf65028867f2"
     },
     "public/sqrlLoginTrackedPhrase.json": {
-        "hash": "a3f130133e4c97424081bde4ada79eb6"
+        "hash": "ae209fc47562f7c773a3caa97afb3772"
     },
     "public/sqrlPasswordChangeRemoveCurrentPassword.json": {
         "hash": "253391f886860074c8fa39c6d7488fbd"
     },
-    "public/sqrlTrackingPhrase.json": {
-        "hash": "71c4bf794565ec347929c2fcde28e879"
+    "public/sqrlRegisterTrackedPhrase.json": {
+        "hash": "efb4584ce28717dd3d977c10be205dce"
     }
 }

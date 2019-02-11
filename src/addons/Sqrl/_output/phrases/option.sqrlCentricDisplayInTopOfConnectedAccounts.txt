@@ -1,0 +1,1 @@
+Move SQRL to top of 'connected accounts' page

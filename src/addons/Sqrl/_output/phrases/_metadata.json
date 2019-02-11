@@ -83,6 +83,54 @@
         "version_string": "1.0.0",
         "hash": "058876358b9533c6dc61459fec0be967"
     },
+    "option.sqrlCentricAccountSidebar.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "1937a90b258773346809a2307419f8d6"
+    },
+    "option.sqrlCentricAddTrackedNotice.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "3110dc11c05d30cd1717e2c790a066b2"
+    },
+    "option.sqrlCentricDisplayInTopOfConnectedAccounts.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "7a2c9805cee3edce0149c73e48befed4"
+    },
+    "option_explain.sqrlCentricAccountSidebar.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "80fbf49aab3356c3f4593f70e424f838"
+    },
+    "option_explain.sqrlCentricAddTrackedNotice.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "c7cf261de0f62373ad7ee42ec30fc576"
+    },
+    "option_explain.sqrlCentricDisplayInTopOfConnectedAccounts.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "d61811e031d8bb1972f5ed48e3371c0f"
+    },
+    "option_group.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "47d29a522e594c544dadf70abd064f5e"
+    },
+    "option_group_description.sqrl.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
     "private_hostname.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -118,6 +166,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "7c6db81f7906eb85f94b676fdefdfa7b"
+    },
+    "sqrl_and_connected_accounts.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "e54d2d1a39ca94856f5cf25381b66a7b"
     },
     "style_prop.sqrlAsset.txt": {
         "global_cache": false,

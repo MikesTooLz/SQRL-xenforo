@@ -1,0 +1,1 @@
+Specifically replace 'Connected accounts' with 'SQRL and connected accounts.

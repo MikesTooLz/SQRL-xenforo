@@ -20,9 +20,12 @@ class Account extends \XF\Pub\Controller\Account
             $handler->handleAuthorization($this, $sqrl, $redirect);
 
             // Move SQRL to top by creating a new array and then merging it with the old one
-            $c = new \XF\Mvc\Entity\ArrayCollection(['sqrl' => $sqrl]);
-            $c = $c->merge($providers);
-            $replyView->setParam('providers', $c);
+            if (\XF::options()->sqrlCentricDisplayInTopOfConnectedAccounts)
+            {
+                $c = new \XF\Mvc\Entity\ArrayCollection(['sqrl' => $sqrl]);
+                $c = $c->merge($providers);
+                $replyView->setParam('providers', $c);
+            }
         }
 
         return $replyView;

@@ -72,3 +72,29 @@ button.button--provider--sqrl > .button-text:before, a.button.button--provider--
 	content: "\e900";
 	/* content: "\e901"; */
 }
+
+.blockLink.sqrl-centric {
+	display: flex;
+	align-items: center;
+	// padding: 10px;
+
+	span {
+		flex: 1 1 1px;
+	}
+
+	&:after {
+		display: inline-block;
+		font: normal normal normal 18px/1 "sqrl";
+		// font-size: inherit;
+		text-rendering: auto;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transform: translate(0, 0);
+		width: auto !important;
+		content: '\e901';
+		// padding-right: 10px;
+		flex: 0 0 auto;
+		opacity: 0.65;
+	}
+}

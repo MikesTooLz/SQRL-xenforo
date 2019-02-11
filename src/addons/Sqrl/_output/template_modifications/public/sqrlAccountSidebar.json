@@ -1,0 +1,9 @@
+{
+    "template": "account_wrapper",
+    "description": "Replace sidebar link text with SQRL-centric one.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<a class=\"blockLink {{ $pageSelected == 'connected_account' ? 'is-selected' : '' }}\" href=\"{{ link('account/connected-accounts') }}\">\n\t\t\t\t\t\t{{ phrase('connected_accounts') }}\n\t\t\t\t\t</a>",
+    "replace": "<xf:if is=\"{{ $xf.options.sqrlCentricAccountSidebar }}\">\n<xf:css src=\"sqrl.less\" />\n\t\t\t\t\t<a class=\"blockLink {{ $pageSelected == 'connected_account' ? 'is-selected' : '' }} sqrl-centric\" href=\"{{ link('account/connected-accounts') }}\">\n\t\t\t\t\t\t<span>{{ phrase('sqrl_and_connected_accounts') }}</span>\n\t\t\t\t\t</a>\n<xf:else />\n\t\t\t\t\t<a class=\"blockLink {{ $pageSelected == 'connected_account' ? 'is-selected' : '' }}\" href=\"{{ link('account/connected-accounts') }}\">\n\t\t\t\t\t\t{{ phrase('connected_accounts') }}\n\t\t\t\t\t</a>\n</xf:if>"
+}
