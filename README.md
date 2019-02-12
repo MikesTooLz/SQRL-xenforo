@@ -30,6 +30,9 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
 - Enter the hostname of the SSP server (as seen from the web browser's perspective)
 - Enter the hostname and private port of the SSP server (as seen from the web server's perspective)
 - Save
+- Go to Setup -> Options -> SQRL 
+- Show your dedication to SQRL by ticking all the checkboxes
+- Save
 
 ## Uninstall
 
