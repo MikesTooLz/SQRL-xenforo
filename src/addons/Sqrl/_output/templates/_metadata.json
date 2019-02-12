@@ -34,6 +34,11 @@
         "version_string": "1.1.5",
         "hash": "94f8ff131023e7bf2afb61fe15fe43db"
     },
+    "public/remove_password_confirm.html": {
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "47163ff6c94157dd8e0dede2b559c14e"
+    },
     "public/sqrl.less": {
         "version_id": 6,
         "version_string": "1.1.5",

@@ -234,4 +234,27 @@ class Account extends \XF\Pub\Controller\Account
             return $this->view('Sqrl:Account/RemoveEmail', 'remove_email_confirm');
         }
     }
+
+    public function actionRemovePassword(ParameterBag $params)
+    {
+        if ($this->filter('confirm', 'bool'))
+        {
+            $this->assertPostOnly();
+
+            $visitor = \XF::visitor();
+            if (!$visitor->canRemovePassword())
+            {
+                return $this->noPermission();
+            }
+            $visitor->Auth->setNoPassword();
+            $visitor->Auth->save();
+            $this->plugin('XF:Login')->handleVisitorPasswordChange();
+            $this->session()->save();
+            return $this->redirect('account/security');
+        }
+        else
+        {
+            return $this->view('Sqrl:Account/RemovePassword', 'remove_password_confirm');
+        }
+    }
 }

@@ -59,6 +59,12 @@
         "version_string": "1.1.5",
         "hash": "20adb991576be017122c585ed6fc3358"
     },
+    "confirm_password_removal.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "5e018aefba9b517c5a81c3262c312516"
+    },
     "disassociating_with_all_accounts_make_account_inaccessible.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -142,6 +148,11 @@
         "version_id": 6,
         "version_string": "1.1.5",
         "hash": "6a582ef73794703ae94fb44bcec4ffa9"
+    "please_confirm_that_you_want_to_remove_password.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "af737cf483a604c93872d4acaead3280"
     },
     "private_hostname.txt": {
         "global_cache": false,
@@ -166,6 +177,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "110ad9e58ffe293912f58155cdb6d61b"
+    },
+    "remove_password.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "490703300bef532683cfaf1e122c8c07"
     },
     "require_email_on_register.txt": {
         "global_cache": false,

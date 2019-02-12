@@ -26,6 +26,9 @@
     "public/sqrlPasswordChangeRemoveCurrentPassword.json": {
         "hash": "253391f886860074c8fa39c6d7488fbd"
     },
+    "public/sqrlPasswordRemoveButton.json": {
+        "hash": "3ea20bb95251275a717401649e71a398"
+    },
     "public/sqrlRegisterTrackedPhrase.json": {
         "hash": "efb4584ce28717dd3d977c10be205dce"
     }

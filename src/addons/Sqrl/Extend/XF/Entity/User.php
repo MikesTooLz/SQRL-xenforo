@@ -19,4 +19,11 @@ class User extends \XF\Entity\User
             && \Sqrl\Util::isSqrlUser($this)
             && $this->email != '';
     }
+
+    public function canRemovePassword()
+    {
+        return \Sqrl\Util::isEnabled()
+            && \Sqrl\Util::isSqrlUser($this)
+            && $this->Auth->getAuthenticationHandler()->hasPassword();
+    }
 }
