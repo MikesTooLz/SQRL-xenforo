@@ -219,9 +219,9 @@ class Account extends \XF\Pub\Controller\Account
             {
                 return $this->noPermission();
             }
-            // We want to overrule any email validation if the user removes his/her email
             \Sqrl\GlobalState::$allowRegisterWithoutEmail = true;
             $visitor->set('email', '');
+            // We want to overrule any email validation if the user removes his/her email
             if ($visitor->user_state == 'email_confirm' || $visitor->user_state == 'email_confirm_edit')
             {
                 $visitor->set('user_state', 'valid');
