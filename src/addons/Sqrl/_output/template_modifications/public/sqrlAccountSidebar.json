@@ -1,6 +1,6 @@
 {
     "template": "account_wrapper",
-    "description": "Replace sidebar link text with SQRL-centric one.",
+    "description": "Replace sidebar link text with SQRL-centric one",
     "execution_order": 10,
     "enabled": true,
     "action": "str_replace",
