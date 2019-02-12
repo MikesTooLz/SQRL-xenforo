@@ -53,7 +53,7 @@ You will also need to remove them from the SSP server which is not done automati
 ### 1.2.0
 
 - Add remove password button.
-- Add email removal button.
+- Add remove email button.
 - Add options to specify the level of SQRL-centricness.
 - Display 'You cannot remove your last connected account without setting up either an email or a password.' error when trying to remove last associated account with no password and email.
 - Suppress an exception thrown when trying to notify the user via email that his password was changed if the user has no email.
