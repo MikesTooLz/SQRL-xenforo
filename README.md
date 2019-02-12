@@ -47,3 +47,47 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
     - `DELETE FROM xf_user_connected_account WHERE provider = 'sqrl'`
 
 You will also need to remove them from the SSP server which is not done automatically.
+
+## Release notes
+
+### 1.2.0
+
+- Add remove password button.
+- Add email removal button.
+- Add options to specify the level of SQRL-centricness.
+- Display 'You cannot remove your last connected account without setting up either an email or a password.' error when trying to remove last associated account with no password and email.
+- Suppress an exception thrown when trying to notify the user via email that his password was changed if the user has no email.
+- Fix bug where SQRL validation prompt highlights wrong sidebar item on account pages.
+
+### 1.1.5
+
+- Update template modifications to work with XF 2.1.
+
+### 1.1.4
+
+- Add setup step that re-persists all SQRL IDs.
+- Make the QR code clickable.
+- Make the SSP server aware that we are in fact assocating and disassociating users so it retains the SQRL ids.
+
+### 1.1.3
+
+- Suppress QR code auth check when page is not visible.
+- Move SQRL to top of account/connected-accounts page.
+- Suppress ajax animation on pag.sqrl requests.
+
+### 1.1.2
+
+- Reduce delay between /pag.sqrl requests to 500ms from 3000ms.
+
+### 1.1.1
+
+- Fix bug where /pag.sqrl URL is malformed.
+
+### 1.1.0
+
+- Add support for slot ID.
+- Add nut to QR image ajax request.
+- Improve error when verifying identity with different SQRL ID.
+- Add message when requiring identity verification and improve style.
+- Fix IE11 incompatibility.
+- Fix bug where user logged in as the first user to ever authenticate *facepalm*.
