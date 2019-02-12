@@ -22,6 +22,11 @@ abstract class Util
         return null;
     }
 
+    public static function isSqrlUser(\XF\Entity\User $user = null)
+    {
+        return isset($user->ConnectedAccounts['sqrl']);
+    }
+
     public static function isSqrlOnlyUser(\XF\Entity\User $user = null)
     {
         if ($user == null)
@@ -32,16 +37,27 @@ abstract class Util
         $auth = $user->Auth->getAuthenticationHandler();
 
         // Only override this method if we don't have SQRL and don't have a password
-        if (isset($user->ConnectedAccounts['sqrl']) && (!$auth || !$auth->hasPassword()))
+        if (self::isSqrlUser($user) && (!$auth || !$auth->hasPassword()))
         {
             return true;
         }
         return false;
     }
 
+    public static function getSqrl()
+    {
+        return \XF::app()->finder('XF:ConnectedAccountProvider')->whereId('sqrl')->fetchOne();
+    }
+
     public static function isEnabled()
     {
-        $sqrl = \XF::app()->finder('XF:ConnectedAccountProvider')->whereId('sqrl')->fetchOne();
+        $sqrl = self::getSqrl();
         return $sqrl && $sqrl->isUsable();
+    }    
+
+    public static function isEmailOptional()
+    {
+        return self::isEnabled()
+            && self::getSqrl()->options['allow_register_without_email'] == '1';
     }
 }

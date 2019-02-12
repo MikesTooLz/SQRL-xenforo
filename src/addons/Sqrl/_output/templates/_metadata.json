@@ -29,6 +29,11 @@
         "version_string": "1.0.0",
         "hash": "381327d736085f8f947df0aa3c11e30b"
     },
+    "public/remove_email_confirm.html": {
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "94f8ff131023e7bf2afb61fe15fe43db"
+    },
     "public/sqrl.less": {
         "version_id": 6,
         "version_string": "1.1.5",

@@ -53,6 +53,12 @@
         "version_string": "1.0.0",
         "hash": "1d520426c8e83e19c5ed4e2bc7afe5ea"
     },
+    "confirm_email_removal.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "20adb991576be017122c585ed6fc3358"
+    },
     "disassociating_with_all_accounts_make_account_inaccessible.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -130,6 +136,12 @@
         "version_id": 6,
         "version_string": "1.1.5",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "please_confirm_that_you_want_to_remove_email.txt": {
+        "global_cache": false,
+        "version_id": 6,
+        "version_string": "1.1.5",
+        "hash": "6a582ef73794703ae94fb44bcec4ffa9"
     },
     "private_hostname.txt": {
         "global_cache": false,

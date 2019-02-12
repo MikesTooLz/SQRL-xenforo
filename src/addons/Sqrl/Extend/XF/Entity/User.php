@@ -12,4 +12,11 @@ class User extends \XF\Entity\User
         }
         return parent::verifyEmail($email);
     }
+
+    public function canRemoveEmail()
+    {
+        return \Sqrl\Util::isEmailOptional()
+            && \Sqrl\Util::isSqrlUser($this)
+            && $this->email != '';
+    }
 }
