@@ -210,6 +210,13 @@ class Account extends \XF\Pub\Controller\Account
 
     public function actionRemoveEmail(ParameterBag $params)
     {
+        $verify = $this->plugin('Sqrl:Verify');
+        // Do SQRL verification first
+        if (!$verify->isVerified())
+        {
+            return $verify->verify($this->buildLink('account/remove-email'), 'account_details');
+        }
+
         if ($this->filter('confirm', 'bool'))
         {
             $this->assertPostOnly();
@@ -237,6 +244,13 @@ class Account extends \XF\Pub\Controller\Account
 
     public function actionRemovePassword(ParameterBag $params)
     {
+        $verify = $this->plugin('Sqrl:Verify');
+        // Do SQRL verification first
+        if (!$verify->isVerified())
+        {
+            return $verify->verify($this->buildLink('account/remove-password'), 'security');
+        }
+
         if ($this->filter('confirm', 'bool'))
         {
             $this->assertPostOnly();
