@@ -14,7 +14,7 @@ class Api
         {
             throw new \XF\PrintableException("The SQRL provider is missing. Was this add-on installed properly?");
         }
-        
+
         $ch = curl_init();
 
         $url = 'http://' . $provider->options['private_hostname']  . '/' . $urlSuffix;
@@ -31,9 +31,9 @@ class Api
         {
             throw new \XF\PrintableException("SQRL SSP server connection failed with error code $errorCode.");
         }
-        
+
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        
+
         // Logging
         // $fh = fopen(\XF\Util\File::getTempDir() . '/sqrl.log', 'a');
         // fwrite($fh, "$url => '$response' ($httpCode)\n");
@@ -42,7 +42,7 @@ class Api
         {
             throw new \XF\PrintableException("SQRL SSP server failed with status code $httpCode.");
         }
-        
+
         curl_close($ch);
 
         $parsedLines = [];
