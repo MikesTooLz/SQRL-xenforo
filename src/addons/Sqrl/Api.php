@@ -34,16 +34,16 @@ class Api
         
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         
+        // Logging
+        // $fh = fopen(\XF\Util\File::getTempDir() . '/sqrl.log', 'a');
+        // fwrite($fh, "$url => '$response' ($httpCode)\n");
+
         if ($httpCode !== 200)
         {
             throw new \XF\PrintableException("SQRL SSP server failed with status code $httpCode.");
         }
         
         curl_close($ch);
-
-        // Logging
-        // $fh = fopen(\XF\Util\File::getTempDir() . '/sqrl.log', 'a');
-        // fwrite($fh, "$url => '$response'\n");
 
         $parsedLines = [];
         $lines = preg_split('#[\r\n]+#', $response, -1, PREG_SPLIT_NO_EMPTY);
