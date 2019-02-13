@@ -22,9 +22,9 @@ abstract class Util
         return null;
     }
 
-    public static function isSqrlUser(\XF\Entity\User $user = null)
+    public static function isSqrlUser(\XF\Entity\User $user)
     {
-        return isset($user->ConnectedAccounts['sqrl']);
+        return self::getSqrl()->isAssociated($user);
     }
 
     public static function isSqrlOnlyUser(\XF\Entity\User $user = null)

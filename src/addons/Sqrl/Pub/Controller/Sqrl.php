@@ -32,7 +32,7 @@ class Sqrl extends AbstractController
         if ($sqrlAction == 'verify')
         {
             $this->session()->set('sqrlAction', '');
-            if (isset($visitor->ConnectedAccounts['sqrl']) && $visitor->ConnectedAccounts['sqrl']->provider_key == $sqrlId)
+            if (\Sqrl\Util::isSqrlUser($visitor) && $visitor->ConnectedAccounts['sqrl']->provider_key == $sqrlId)
             {
                 $this->session()->set('lastSqrlAuthentication', \XF::$time);
                 $this->session()->save();
