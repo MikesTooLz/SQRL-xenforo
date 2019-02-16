@@ -27,17 +27,31 @@ abstract class Util
         return self::getSqrl()->isAssociated($user);
     }
 
-    public static function isSqrlOnlyUser(\XF\Entity\User $user = null)
+    public static function getUserSqrlProperties(\XF\Entity\User $user)
     {
-        if ($user == null)
+        if (!self::isSqrlUser($user))
         {
-            $user = \XF::visitor();
+            return [];
         }
+        $extraData = $user->ConnectedAccounts['sqrl']->extra_data;
+        if (!isset($extraData['properties']))
+        {
+            return [];
+        }
+        return $extraData['properties'];
+    }
 
+    public static function isSqrlExclusiveUser(\XF\Entity\User $user)
+    {
+        return \in_array('sqrlonly', self::getUserSqrlProperties($user));
+    }
+
+    public static function mustVerifyWithSqrl(\XF\Entity\User $user)
+    {
         $auth = $user->Auth->getAuthenticationHandler();
 
         // Only override this method if we don't have SQRL and don't have a password
-        if (self::isSqrlUser($user) && (!$auth || !$auth->hasPassword()))
+        if (self::isSqrlUser($user) && (!$auth || !$auth->hasPassword() || self::isSqrlExclusiveUser($user)))
         {
             return true;
         }

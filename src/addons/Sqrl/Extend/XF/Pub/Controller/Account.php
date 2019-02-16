@@ -40,7 +40,7 @@ class Account extends \XF\Pub\Controller\Account
         $visitor = \XF::visitor();
 
         // Only override this method if we don't have SQRL and don't have a password
-        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        if (!\Sqrl\Util::mustVerifyWithSqrl($visitor))
         {
             return parent::actionEmail();
         }
@@ -79,7 +79,7 @@ class Account extends \XF\Pub\Controller\Account
     protected function emailSaveProcess(\XF\Entity\User $visitor)
     {
         // Only override this method if we don't have SQRL and don't have a password
-        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        if (!\Sqrl\Util::mustVerifyWithSqrl($visitor))
         {
             return parent::emailSaveProcess($visitor);
         }
@@ -130,7 +130,7 @@ class Account extends \XF\Pub\Controller\Account
         $visitor = \XF::visitor();
         $reply = parent::actionSecurity();
 
-        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        if (!\Sqrl\Util::mustVerifyWithSqrl($visitor))
         {
             return $reply;
         }
@@ -146,7 +146,7 @@ class Account extends \XF\Pub\Controller\Account
         }
 
         // This ensures a template modification renders without 'old password'
-        if (!$this->isPost() && \Sqrl\Util::isSqrlOnlyUser($visitor))
+        if (!$this->isPost() && \Sqrl\Util::mustVerifyWithSqrl($visitor))
         {
             $reply->setParam('sqrlAuthentication', true);
             $reply->setParam('hasPassword', true);
@@ -164,7 +164,7 @@ class Account extends \XF\Pub\Controller\Account
     protected function setupPasswordChange()
     {
         $visitor = \XF::visitor();
-        if (!\Sqrl\Util::isSqrlOnlyUser($visitor))
+        if (!\Sqrl\Util::mustVerifyWithSqrl($visitor))
         {
             return parent::setupPasswordChange();
         }

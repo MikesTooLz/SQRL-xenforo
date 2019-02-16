@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\ControllerPlugin\\Login",
+    "to_class": "Sqrl\\Extend\\XF\\ControllerPlugin\\Login",
+    "execute_order": 10,
+    "active": true
+}

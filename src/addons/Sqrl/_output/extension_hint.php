@@ -6,6 +6,7 @@
 namespace Sqrl\Extend\XF\ControllerPlugin
 {
 	class XFCP_Error extends \XF\ControllerPlugin\Error {}
+	class XFCP_Login extends \XF\ControllerPlugin\Login {}
 }
 
 namespace Sqrl\Extend\XF\Entity

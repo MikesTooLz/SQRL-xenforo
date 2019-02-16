@@ -55,6 +55,9 @@ class Sqrl extends AbstractController
         $tokenObj = new \OAuth\OAuth2\Token\StdOAuth2Token();
         $tokenObj->setAccessToken($sqrlId);
         $storageState->storeToken($tokenObj);
+        $storageState->storeProviderData([
+            'properties' => explode(',', $cps['stat']),
+        ]);
 
         $session->set('connectedAccountRequest', $connectedAccountRequest);
         $session->save();

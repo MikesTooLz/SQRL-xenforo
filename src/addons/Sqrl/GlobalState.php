@@ -9,4 +9,6 @@ namespace Sqrl;
 abstract class GlobalState
 {
     public static $allowRegisterWithoutEmail = false;
+
+    public static $isLoggingInWithSqrl = false;
 }

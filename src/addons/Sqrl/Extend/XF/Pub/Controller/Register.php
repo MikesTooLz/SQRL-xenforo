@@ -48,4 +48,15 @@ class Register extends \XF\Pub\Controller\Register
         }
         return parent::finalizeRegistration($user);
     }
+
+    public function actionConnectedAccount(\XF\Mvc\ParameterBag $params)
+    {
+        /**
+         * Set a GlobalState variable so we can access it in our extension of the class
+         * \Sqrl\Extend\ControllerPlugin\Login just before the login occurs.
+         */
+        \Sqrl\GlobalState::$isLoggingInWithSqrl = $params->provider_id == 'sqrl';
+
+        return parent::actionConnectedAccount($params);
+    }
 }

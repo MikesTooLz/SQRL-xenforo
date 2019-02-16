@@ -227,6 +227,12 @@
         "version_string": "1.0.0",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
+    "this_account_only_allows_logging_in_with_sqrl.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "bfab47fc23ab55dfb770ce058ae961a7"
+    },
     "verify_identity_with_sqrl.txt": {
         "global_cache": false,
         "version_id": 0,
