@@ -40,7 +40,7 @@ class Register extends \XF\Pub\Controller\Register
     protected function finalizeRegistration(\XF\Entity\User $user)
     {
         // We know this variable is only set if we are already registering with SQRL
-        if (\Sqrl\GlobalState::$allowRegisterWithoutEmail)
+        if (\Sqrl\GlobalState::$allowRegisterWithoutEmail && $user->email == '')
         {
             // Set the user to email validated despite the missing email
             $user->set('user_state', 'valid');
