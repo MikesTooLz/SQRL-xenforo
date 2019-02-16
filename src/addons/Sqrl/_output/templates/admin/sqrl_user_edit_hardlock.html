@@ -1,0 +1,5 @@
+<xf:if is="{{ $user.isSqrlHardlocked() }}">
+	<div class="blockMessage blockMessage--error blockMessage--iconic">
+		{{ phrase('warning_user_used_sqrl_to_request_no_account_recovery') }}
+	</div>
+</xf:if>

@@ -46,6 +46,11 @@ abstract class Util
         return \in_array('sqrlonly', self::getUserSqrlProperties($user));
     }
 
+    public static function isHardlockedUser(\XF\Entity\User $user)
+    {
+        return \in_array('hardlock', self::getUserSqrlProperties($user));
+    }
+
     public static function mustVerifyWithSqrl(\XF\Entity\User $user)
     {
         $auth = $user->Auth->getAuthenticationHandler();

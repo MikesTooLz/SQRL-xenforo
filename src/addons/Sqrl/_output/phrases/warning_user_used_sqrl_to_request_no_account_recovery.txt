@@ -1,0 +1,1 @@
+WARNING: This user has used SQRL to request that no account recovery measures should be taken. Please advise the user that they must first use their SQRL identity to allow account recovery. (If they are unable, this may not really be them.)

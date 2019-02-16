@@ -28,5 +28,8 @@
     },
     "XF-Service-User-PasswordChange_Sqrl-Extend-XF-Service-User-PasswordChange.json": {
         "hash": "4cb8d57f8905237bc7ec1f5b6a5f24de"
+    },
+    "XF-Service-User-PasswordReset_Sqrl-Extend-XF-Service-User-PasswordReset.json": {
+        "hash": "b3fbb00f108852a3d00b6567781d1ae9"
     }
 }

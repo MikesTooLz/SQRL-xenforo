@@ -4,6 +4,11 @@
         "version_string": "1.0.0",
         "hash": "af5ef7bd1a058c06ab27a7adc5676225"
     },
+    "admin/sqrl_user_edit_hardlock.html": {
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "cf90ff3ccfe6fb03c9a337e508989725"
+    },
     "public/_widget_thuix_aboutUsWidget.html": {
         "version_id": 0,
         "version_string": "1.0.0",

@@ -1,0 +1,9 @@
+{
+    "template": "user_edit",
+    "description": "Display message to admins editing hardlocked users",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "\t<xf:form action=\"{{ link('users/save', $user) }}\" ajax=\"true\" class=\"block-container\" novalidate=\"novalidate\">\n\t\t",
+    "replace": "<xf:include template=\"sqrl_user_edit_hardlock\" />\n$0"
+}

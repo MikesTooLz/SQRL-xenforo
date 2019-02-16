@@ -26,4 +26,9 @@ class User extends \XF\Entity\User
             && \Sqrl\Util::isSqrlUser($this)
             && $this->Auth->getAuthenticationHandler()->hasPassword();
     }
+
+    public function isSqrlHardlocked()
+    {
+        return \Sqrl\Util::isHardlockedUser($this);
+    }
 }

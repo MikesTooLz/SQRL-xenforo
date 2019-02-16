@@ -227,6 +227,12 @@
         "version_string": "1.0.0",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
+    "this_account_is_hardlocked_using_sqrl_no_recovery_possible.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "97b24a5d3ccce705ab46aaf79bdbd037"
+    },
     "this_account_only_allows_logging_in_with_sqrl.txt": {
         "global_cache": false,
         "version_id": 7,
@@ -238,6 +244,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "d3b432eb42925ddf8d02749a786c4fbb"
+    },
+    "warning_user_used_sqrl_to_request_no_account_recovery.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "aa017e5e25330a9113b358e08def66d9"
     },
     "you_have_authenticated_with_different_sqrl_id.txt": {
         "global_cache": false,
