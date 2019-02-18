@@ -187,24 +187,12 @@ class Account extends \XF\Pub\Controller\Account
      */
     public function actionConnectedAccountDisassociate(ParameterBag $params)
     {
-        $this->assertPostOnly();
+        // SQRL ID cannot be removed with XenForo
+        if ($params->provider_id == 'sqrl')
+        {
+            return $this->error(\XF::phrase('disassociation_can_only_be_done_with_sqrl_client'));
+        }
 
-        $visitor = \XF::visitor();
-        $auth = $visitor->Auth->getAuthenticationHandler();
-        if (!$auth)
-        {
-            return $this->noPermission();
-        }
-        
-        $connectedAccounts = $visitor->ConnectedAccounts;
-        if ($this->filter('disassociate', 'bool')
-         && !$auth->hasPassword()
-         && $visitor->email == '' 
-         && count($connectedAccounts) == 1
-        )
-        {
-            throw $this->errorException(\XF::phrase('cannot_remove_last_connected_account_without_password'));
-        }
         return parent::actionConnectedAccountDisassociate($params);
     }
 

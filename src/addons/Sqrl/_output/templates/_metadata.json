@@ -50,9 +50,9 @@
         "hash": "6ce4442b1bbaa8750286de52805c951a"
     },
     "public/sqrl_macros.html": {
-        "version_id": 4,
-        "version_string": "1.1.3",
-        "hash": "be6e8f2b998262348b2519eeae798d78"
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "b72a1a21a517a46f312520701c56bea8"
     },
     "public/sqrl_verify.html": {
         "version_id": 0,

@@ -1,0 +1,9 @@
+{
+    "template": "connected_account_macros",
+    "description": "Remove disassociate button.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "#<xf:form action=\"{{ link\\('account\\/connected\\-accounts\\/disassociate'(.*?)xf:form>#s",
+    "replace": "<xf:if is=\"{{ $provider.provider_id == 'sqrl' }}\">\n\t<xf:macro template=\"sqrl_macros\" name=\"cannot_disassociate\" />\n<xf:else />\n$0\n</xf:if>"
+}

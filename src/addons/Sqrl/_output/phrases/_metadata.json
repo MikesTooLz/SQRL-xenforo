@@ -71,6 +71,12 @@
         "version_string": "1.0.0",
         "hash": "14cc7781f60e594f5b6266b903039d9e"
     },
+    "disassociation_can_only_be_done_with_sqrl_client.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "4d434608bcc07a023231e74926c0cbd2"
+    },
     "hostname.txt": {
         "global_cache": false,
         "version_id": 0,

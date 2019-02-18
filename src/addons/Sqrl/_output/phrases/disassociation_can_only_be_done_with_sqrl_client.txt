@@ -1,0 +1,1 @@
+Disassociation of a SQRL ID can only be done with the SQRL client itself.

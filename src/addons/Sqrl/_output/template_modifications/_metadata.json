@@ -34,5 +34,8 @@
     },
     "public/sqrlRegisterTrackedPhrase.json": {
         "hash": "efb4584ce28717dd3d977c10be205dce"
+    },
+    "public/sqrlRemoveDisassociateButton.json": {
+        "hash": "572802eb07d8563ece457428a97577b6"
     }
 }
