@@ -26,9 +26,17 @@ class Sqrl extends AbstractController
         // Check if we have a user
         $cps = \Sqrl\Api::cps($token);
         $sqrlId = $cps['user'];
+        $splitStat = explode(',', $cps['stat']);
 
         // For verification of identity during a session
         $sqrlAction = $session->get('sqrlAction');
+
+        if (in_array('disabled', $splitStat))
+        {
+            // SQRL ID disabled. Cannot verify, cannot anything
+            return $this->message('Your SQRL ID has been successfully disabled.');
+        }
+
         if ($sqrlAction == 'verify')
         {
             $this->session()->set('sqrlAction', '');
@@ -56,7 +64,7 @@ class Sqrl extends AbstractController
         $tokenObj->setAccessToken($sqrlId);
         $storageState->storeToken($tokenObj);
         $storageState->storeProviderData([
-            'properties' => explode(',', $cps['stat']),
+            'properties' => $splitStat,
         ]);
 
         $session->set('connectedAccountRequest', $connectedAccountRequest);
