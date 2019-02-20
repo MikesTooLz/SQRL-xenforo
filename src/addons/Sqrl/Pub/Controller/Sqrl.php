@@ -34,7 +34,7 @@ class Sqrl extends AbstractController
         if (in_array('disabled', $splitStat))
         {
             // SQRL ID disabled. Cannot verify, cannot anything
-            return $this->message('Your SQRL ID has been successfully disabled.');
+            return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disabled'));
         }
 
         if ($sqrlAction == 'verify')
