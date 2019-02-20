@@ -17,6 +17,12 @@
         "version_string": "1.1.5",
         "hash": "199175426c12796c3a91a673d1f16d12"
     },
+    "click_or_scan_qr_code.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "ee1921521ceeb4c5a9b1835ed1a580b5"
+    },
     "con_acc.sqrl.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -208,6 +214,12 @@
         "version_id": 6,
         "version_string": "1.1.5",
         "hash": "e54d2d1a39ca94856f5cf25381b66a7b"
+    },
+    "sqrl_authentication_requires_javascript_to_function.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "81583ab9d9230d6cca6e37b97db6e12e"
     },
     "style_prop.sqrlAsset.txt": {
         "global_cache": false,

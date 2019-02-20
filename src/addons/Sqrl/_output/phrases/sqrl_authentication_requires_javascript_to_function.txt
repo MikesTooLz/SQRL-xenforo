@@ -1,0 +1,1 @@
+SQRL authentication requires JavaScript to function.

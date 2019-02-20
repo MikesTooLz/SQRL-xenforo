@@ -46,7 +46,7 @@
 				{{ phrase('con_acc.sqrl') }}
 			</xf:button>
 			<span>
-				&larr; Click or scan SQRL QR code &rarr;
+				&larr; {{ phrase('click_or_scan_qr_code') }} &rarr;
 			</span>
 			<a class="image" href="sqrl://todo">
 				<img />
@@ -54,7 +54,7 @@
 		</div>
 
 		<noscript>
-			<div class="error">SQRL authentication requires JavaScript to function.</div>
+			<div class="error">{{ phrase('sqrl_authentication_requires_javascript_to_function') }}</div>
 		</noscript>
 	</div>
 	<xf:js prod="sqrl.min.js?5" dev="sqrl.js?5" />
