@@ -31,8 +31,42 @@ class Sqrl extends AbstractController
         // For verification of identity during a session
         $sqrlAction = $session->get('sqrlAction');
 
+        if (in_array('deleting', $splitStat))
+        {
+            // Get local association
+            $connectedAccount = $this->finder('XF:UserConnectedAccount')
+                ->where('provider', 'sqrl')
+                ->where('provider_key', $sqrlId)
+                ->fetchOne();
+            $userId = $connectedAccount->user_id;
+            $user = $this->assertRecordExists('XF:User', $userId, null, 'requested_user_not_found');
+            // We have extended this class to actually delete the connected account in SQRL so we
+            // don't have to do it explicitly here.
+            $connectedAccount->delete();
+
+            $provider = $this->assertRecordExists('XF:ConnectedAccountProvider', 'sqrl');
+            $handler = $provider->getHandler();
+            $storageState = $handler->getStorageState($provider, $user);
+            $storageState->clearToken();
+
+            unset($session->sqrlAction);
+            $session->save();
+
+            if ($visitor->user_id)
+            {
+                return $this->redirect($this->buildLink('account/connected-accounts'));
+            }
+            else
+            {
+                return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disassociated'));
+            }
+        }
+
         if (in_array('disabled', $splitStat))
         {
+            unset($session->sqrlAction);
+            $session->save();
+
             // SQRL ID disabled. Cannot verify, cannot anything
             return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disabled'));
         }

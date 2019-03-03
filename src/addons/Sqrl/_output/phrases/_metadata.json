@@ -286,5 +286,11 @@
         "version_id": 7,
         "version_string": "1.2.0",
         "hash": "992b4f943fcdec6ae95c0c7554303ecd"
+    },
+    "your_sqrl_id_has_been_successfully_disassociated.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "05e53d420fe18c23c1ef984150379b62"
     }
 }
