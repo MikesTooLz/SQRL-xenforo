@@ -11,6 +11,12 @@
         "version_string": "1.0.0",
         "hash": "0a8d254bc53e7dc58ca642a18137d3fe"
     },
+    "authenticate_with_your_new_identity.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "a796496f8dfc406040b93d115bfb18f6"
+    },
     "cannot_remove_last_connected_account_without_password.txt": {
         "global_cache": false,
         "version_id": 6,
@@ -124,6 +130,12 @@
         "version_id": 7,
         "version_string": "1.2.0",
         "hash": "a5d35008d239cba61c3627c4d3c084ce"
+    },
+    "no_account_registered_with_this_sqrl_id.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "d7cd18d946bfdb9bbf64a57c5613a572"
     },
     "option.sqrlCentricAccountSidebar.txt": {
         "global_cache": false,
@@ -268,6 +280,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "this_account_is_already_associated_with_you.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "114f1286bfaa889695e6c6a0953fb328"
     },
     "this_account_is_hardlocked_using_sqrl_no_recovery_possible.txt": {
         "global_cache": false,

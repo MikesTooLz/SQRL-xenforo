@@ -40,7 +40,8 @@ class Sqrl extends AbstractController
     public function actionDisassociate(ParameterBag $params)
     {
         /** @var \XF\Session\Session $session */
-        $session = \XF::app()['session.public'];
+        // $session = \XF::app()['session.public'];
+        $session = $this->session();
 
         $visitor = \XF::visitor();
 
@@ -65,6 +66,11 @@ class Sqrl extends AbstractController
                         ->where('provider_key', $session->sqrlDelete)
                         ->fetchOne();
 
+                    if (!$connectedAccount)
+                    {
+                        exit("YOES");
+                    }
+
                     $this->performDisassociation($session->sqrlDelete, $connectedAccount);
 
                     unset($session->sqrlDelete);
@@ -76,6 +82,7 @@ class Sqrl extends AbstractController
                     }
                     else
                     {
+                        // TODO: Make some redirect, this messages shows up as Ajax message in the top and stays in the form
                         return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disassociated'));
                     }
 
@@ -89,9 +96,12 @@ class Sqrl extends AbstractController
                     // Re-add the connection to let SQRL know we didn't mean it
                     // Get local association
                     $connectedAccount = $this->finder('XF:UserConnectedAccount')
-                        ->where('provider', 'sqrl')
-                        ->where('provider_key', $session->sqrlDelete)
-                        ->fetchOne();
+                    ->where('provider', 'sqrl')
+                    ->where('provider_key', $session->sqrlDelete)
+                    ->fetchOne();
+
+                    unset($session->sqrlDelete);
+                    $session->save();
 
                     if (!$connectedAccount)
                     {
@@ -99,8 +109,6 @@ class Sqrl extends AbstractController
                     }
 
                     \Sqrl\Api::addUserToSqrl(\Sqrl\Api::addPrefix($connectedAccount->user_id), $connectedAccount->provider_key);
-                    unset($session->sqrlDelete);
-                    $session->save();
                     if ($visitor->user_id)
                     {
                         return $this->redirect($this->buildLink('account/connected-accounts'));
@@ -123,7 +131,8 @@ class Sqrl extends AbstractController
         $visitor = \XF::visitor();
 
         /** @var \XF\Session\Session $session */
-        $session = \XF::app()['session.public'];
+        // $session = \XF::app()['session.public'];
+        $session = $this->session();
 
         $connectedAccountRequest = $session->get('connectedAccountRequest');
         $connectedAccountRequest['tokenStored'] = true;
@@ -140,38 +149,13 @@ class Sqrl extends AbstractController
         // Deletion or replacement of SQRL ID
         if (in_array('remove', $splitStat) && $sqrlAction != 'replace')
         {
-            unset($session->sqrlAction);
-            $session->save();
-
             // User deletion is two-step. First we get a 'remove' and redirect the user to
             // sqrl/disassociate, we then get redirected back here to authenticate with the new ID,
             // in that case $sqrlAction == 'replace'.
-            $connectedAccount = $this->finder('XF:UserConnectedAccount')
-                ->where('provider', 'sqrl')
-                ->where('provider_key', $sqrlId)
-                ->fetchOne();
-
-            if (!$connectedAccount || $session->userId != $connectedAccount->user_id)
-            {
-                // If we don't have an association or got an association not related to the
-                // currently logged in user.
-                $this->performDisassociation($sqrlId, $connectedAccount);
-                if ($visitor->user_id)
-                {
-                    return $this->redirect($this->buildLink('account/connected-accounts'));
-                }
-                else
-                {
-                    return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disassociated'));
-                }
-            }
-            else
-            {
-                // User is logged in and gets the choice to replace his ID
-                $session->set('sqrlDelete', $sqrlId);
-                $session->save();
-                return $this->redirect($this->buildLink('sqrl/disassociate'));
-            }
+            unset($session->sqrlAction); // Just in case
+            $session->set('sqrlDelete', $sqrlId);
+            $session->save();
+            return $this->redirect($this->buildLink('sqrl/disassociate'));
         }
 
         // Disabling of SQRL ID
@@ -194,16 +178,16 @@ class Sqrl extends AbstractController
         if ($sqrlAction == 'verify')
         {
             // We are verifying, in this case we expect the user to be logged in
-            $this->session()->set('sqrlAction', '');
+            unset($session->sqrlAction);
             if (\Sqrl\Util::isSqrlUser($visitor) && $visitor->ConnectedAccounts['sqrl']->provider_key == $sqrlId)
             {
-                $this->session()->set('lastSqrlAuthentication', \XF::$time);
-                $this->session()->save();
+                $session->set('lastSqrlAuthentication', \XF::$time);
+                $session->save();
                 return $this->redirect($connectedAccountRequest['returnUrl']);
             }
             else
             {
-                $this->session()->save();
+                $session->save();
                 return $this->message(\XF::phrase('you_have_authenticated_with_different_sqrl_id'));
             }
         }
@@ -214,15 +198,22 @@ class Sqrl extends AbstractController
                 ->where('provider_key', $sqrlId)
                 ->fetchOne();
 
+            $oldSqrlId = $session->sqrlDelete;
+            unset($session->sqrlAction);
+            unset($session->sqrlDelete);
+            $session->save();
+
             if ($connectedAccount)
             {
-                return $this->error(\XF::phrase('this_account_is_already_associated_with_another_member'));
+                if ($connectedAccount->user_id == $session->userId)
+                {
+                    return $this->error(\XF::phrase('this_account_is_already_associated_with_you'));
+                }
+                else
+                {
+                    return $this->error(\XF::phrase('this_account_is_already_associated_with_another_member'));
+                }
             }
-
-            $oldSqrlId = $this->session()->sqrlDelete;
-            $this->session()->set('sqrlAction', '');
-            $this->session()->set('sqrlDelete', '');
-            $this->session()->save();
 
             $oldConnectedAccount = $this->finder('XF:UserConnectedAccount')
             ->where('provider', 'sqrl')
@@ -234,8 +225,8 @@ class Sqrl extends AbstractController
                 \Sqrl\Api::removeAssociation(\Sqrl\Api::addPrefix($oldConnectedAccount->user_id));
                 \Sqrl\Api::addUserToSqrl(\Sqrl\Api::addPrefix($oldConnectedAccount->user_id), $sqrlId);
                 // Replace the SQRL ID
-                $oldConnectedAccount->User->ConnectedAccounts['sqrl']->set('provider_key', $sqrlId);
-                $oldConnectedAccount->User->ConnectedAccounts['sqrl']->save();
+                $oldConnectedAccount->set('provider_key', $sqrlId);
+                $oldConnectedAccount->save();
                 // Follow along with the standard authentication as the currently authenticating ID
                 // is now registered to the user.
             }
