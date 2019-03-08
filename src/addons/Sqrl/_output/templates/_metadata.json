@@ -45,9 +45,9 @@
         "hash": "47163ff6c94157dd8e0dede2b559c14e"
     },
     "public/sqrl.less": {
-        "version_id": 6,
-        "version_string": "1.1.5",
-        "hash": "6ce4442b1bbaa8750286de52805c951a"
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "7e58331dc10bd7535d477b2d6db17ac2"
     },
     "public/sqrl_delete_or_replace.html": {
         "version_id": 7,
