@@ -71,6 +71,18 @@
         "version_string": "1.1.5",
         "hash": "5e018aefba9b517c5a81c3262c312516"
     },
+    "disassociate_identity.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "c9da2704f9c0aff30f73d3f96d5f414a"
+    },
+    "disassociate_or_replace_identity.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "6335c99be9a798e6711268b324d0b0d5"
+    },
     "disassociating_with_all_accounts_make_account_inaccessible.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -106,6 +118,12 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "058876358b9533c6dc61459fec0be967"
+    },
+    "make_sure_you_have_other_means_of_logging_in.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "a5d35008d239cba61c3627c4d3c084ce"
     },
     "option.sqrlCentricAccountSidebar.txt": {
         "global_cache": false,
@@ -197,6 +215,12 @@
         "version_string": "1.1.5",
         "hash": "490703300bef532683cfaf1e122c8c07"
     },
+    "replace_identity.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "e170986b4a8104b9e67e4c8078081cbf"
+    },
     "require_email_on_register.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -280,6 +304,18 @@
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "aedf6c8154b51a13bc9ffeeec15c96bf"
+    },
+    "you_need_to_confirm_disassociation.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "0c81cf0589197dfb6a7e8640bc1c93e5"
+    },
+    "you_will_be_prompted_for_your_new_sqrl_id_next_page.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "e96d309a9df7a1a4d3927b8830b59758"
     },
     "your_sqrl_id_has_been_successfully_disabled.txt": {
         "global_cache": false,

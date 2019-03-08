@@ -1,0 +1,19 @@
+<xf:title>{{ phrase('disassociate_or_replace_identity') }}</xf:title>
+
+<xf:form action="{{ link('sqrl/disassociate') }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:radiorow name="action" value="disassociate" label="{{ phrase('action') }}">
+				<xf:option value="disassociate" label="{{ phrase('disassociate_identity') }}" hint="{{ phrase('make_sure_you_have_other_means_of_logging_in') }}">
+					<xf:checkbox>
+						<xf:option name="confirm_disassociate" value="1" label="{{ phrase('confirm_disassociation') }}" />
+					</xf:checkbox>
+				</xf:option>
+				<xf:option value="replace" label="{{ phrase('replace_identity') }}" hint="{{ phrase('you_will_be_prompted_for_your_new_sqrl_id_next_page') }}" />
+				<xf:option value="cancel" label="{{ phrase('cancel') }}" />
+			</xf:radiorow>
+		</div>
+		<xf:submitrow icon="confirm" sticky="true" />
+	</div>
+	<xf:redirect />
+</xf:form>

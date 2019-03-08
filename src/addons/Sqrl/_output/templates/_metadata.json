@@ -49,10 +49,20 @@
         "version_string": "1.1.5",
         "hash": "6ce4442b1bbaa8750286de52805c951a"
     },
+    "public/sqrl_delete_or_replace.html": {
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "623108f2d2ed5fb27c5ce612a7d85352"
+    },
     "public/sqrl_macros.html": {
         "version_id": 7,
         "version_string": "1.2.0",
         "hash": "49968f3c6fcc87724431554704b438cc"
+    },
+    "public/sqrl_replace_identity.html": {
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "64627d4b49211990985465390907de13"
     },
     "public/sqrl_verify.html": {
         "version_id": 0,
