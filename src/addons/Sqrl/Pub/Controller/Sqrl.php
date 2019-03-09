@@ -66,11 +66,6 @@ class Sqrl extends AbstractController
                         ->where('provider_key', $session->sqrlDelete)
                         ->fetchOne();
 
-                    if (!$connectedAccount)
-                    {
-                        exit("YOES");
-                    }
-
                     $this->performDisassociation($session->sqrlDelete, $connectedAccount);
 
                     unset($session->sqrlDelete);
@@ -131,7 +126,6 @@ class Sqrl extends AbstractController
         $visitor = \XF::visitor();
 
         /** @var \XF\Session\Session $session */
-        // $session = \XF::app()['session.public'];
         $session = $this->session();
 
         $connectedAccountRequest = $session->get('connectedAccountRequest');
@@ -164,16 +158,6 @@ class Sqrl extends AbstractController
         {
             unset($session->sqrlAction);
             $session->save();
-
-            // SQRL ID disabled. Cannot verify, cannot anything
-            if ($session->userId)
-            {
-                return $this->redirect($this->buildLink('account/connected-accounts'));
-            }
-            else
-            {
-                return $this->message(\XF::phrase('your_sqrl_id_has_been_successfully_disabled'));
-            }
         }
 
         if ($sqrlAction == 'verify')
@@ -246,6 +230,23 @@ class Sqrl extends AbstractController
         $storageState->storeProviderData([
             'properties' => $splitStat,
         ]);
+
+        // Prevent the rest of stuff by redirecting back to the connected-accounts page
+        if ($sqrlAction == 'talk')
+        {
+            unset($session->sqrlAction);
+            $session->save();
+
+            if ($session->userId)
+            {
+                return $this->redirect($this->buildLink('account/connected-accounts'));
+            }
+            else
+            {
+                $redirect = $this->getDynamicRedirect(null, false);
+                return $this->redirect($redirect);
+            }
+        }
 
         $session->set('connectedAccountRequest', $connectedAccountRequest);
         $session->save();

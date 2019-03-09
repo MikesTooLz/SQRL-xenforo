@@ -1,2 +1,2 @@
-<img src="/{{ property('sqrlAsset') }}/logo.png" width="48" alt="" />
-<div>{{ phrase('associated') }}</div>
+<xf:macro template="sqrl_macros" name="sqrl_bit" arg-data="{$provider}" />
+<div>{{ phrase('associated') }}<xf:if is="$providerData.properties"> &mdash; {$providerData.properties|join(', ')}</xf:if></div>

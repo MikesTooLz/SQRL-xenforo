@@ -30,9 +30,9 @@
         "hash": "e681a979a6db874d29e7b49fdd8cb9b1"
     },
     "public/connected_account_associated_sqrl.html": {
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "381327d736085f8f947df0aa3c11e30b"
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "5214ee4a3212c0c580977fdc7f93288e"
     },
     "public/remove_email_confirm.html": {
         "version_id": 6,

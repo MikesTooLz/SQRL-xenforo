@@ -72,4 +72,13 @@ class Sqrl extends AbstractProvider
 
         return $controller->message('This page is not supposed to show');
     }
+
+    public function renderAssociated(ConnectedAccountProvider $provider, \XF\Entity\User $user)
+    {
+        /** @var \XF\Session\Session $session */
+        $session = \XF::app()['session.public'];
+        $session->set('sqrlAction', 'talk');
+        $session->save();
+        return parent::renderAssociated($provider, $user);
+    }
 }
