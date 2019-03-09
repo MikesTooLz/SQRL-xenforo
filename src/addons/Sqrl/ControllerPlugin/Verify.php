@@ -16,8 +16,11 @@ class Verify extends \XF\ControllerPlugin\AbstractPlugin
         $sqrl = $this->assertProviderExists('sqrl');
         $handler = $sqrl->getHandler();
         $handler->handleAuthorization($this->controller, $sqrl, $returnUrl);
-        $this->session()->set('sqrlAction', 'verify');
-        $this->session()->save();
+
+        $session = $this->session();
+        $session->set('sqrlAction', 'verify');
+        $session->save();
+
         $view = $this->view('XF:Account\SqrlVerify', 'sqrl_verify', ['sqrl' => $sqrl]);
         return $this->addAccountWrapperParams($view, $selectedPage);
     }

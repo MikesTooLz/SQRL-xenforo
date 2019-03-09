@@ -152,7 +152,8 @@ class Sqrl extends AbstractController
             // User deletion is two-step. First we get a 'remove' and redirect the user to
             // sqrl/disassociate, we then get redirected back here to authenticate with the new ID,
             // in that case $sqrlAction == 'replace'.
-            unset($session->sqrlAction); // Just in case
+            // Just in case
+            unset($session->sqrlAction);
             $session->set('sqrlDelete', $sqrlId);
             $session->save();
             return $this->redirect($this->buildLink('sqrl/disassociate'));
