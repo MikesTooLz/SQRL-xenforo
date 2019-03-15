@@ -4,7 +4,7 @@
 
 ![SQRL screenshot](docs/register-screenshot.png)
 
-This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQRL from [Gibson Research Corporation](https://www.grc.com/sqrl/sqrl.htm).
+This add-on adds SQRL authentication to XenForo 2.1. You can read more about SQRL from [Gibson Research Corporation](https://www.grc.com/sqrl/sqrl.htm).
 
 ## Features
 
@@ -17,7 +17,7 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
 
 ## Requirements
 
-- XenForo 2.0 using HTTPS
+- XenForo 2.1 using HTTPS
 - PHP cURL extension [http://php.net/manual/en/book.curl.php]
 - SSP server on the domain of the web server or a subdomain
 
@@ -49,6 +49,14 @@ This add-on adds SQRL authentication to XenForo 2.0. You can read more about SQR
 You will also need to remove them from the SSP server which is not done automatically.
 
 ## Release notes
+
+### 1.3.0
+
+- Emphasize QR code with CSS transformation and animation on hover.
+- Always show QR code on 'Connected accounts' page to interact with SQRL.
+- Remove casual disassociation of SQRL in favor of signal from SQRL client.
+- Add way to safely replace SQRL ID (with permission from client).
+- Move 'allow register without email' from 'Connected accounts -> SQRL' option into 'Options -> SQRL' page.
 
 ### 1.2.0
 
