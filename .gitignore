@@ -30,3 +30,5 @@ src/config.php
 src/config.php.default
 src/index.html
 src/XF.php
+uix_manifest.php
+unfurl.php
