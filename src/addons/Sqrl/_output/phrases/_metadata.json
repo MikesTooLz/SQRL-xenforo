@@ -17,11 +17,11 @@
         "version_string": "1.2.0",
         "hash": "a796496f8dfc406040b93d115bfb18f6"
     },
-    "cannot_remove_last_connected_account_without_password.txt": {
+    "cannot_remove_sqrl_id_account_without_password.txt": {
         "global_cache": false,
-        "version_id": 6,
-        "version_string": "1.1.5",
-        "hash": "199175426c12796c3a91a673d1f16d12"
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "2fb9ca1befc8781134fb93f76fd64b2f"
     },
     "click_or_scan_qr_code.txt": {
         "global_cache": false,

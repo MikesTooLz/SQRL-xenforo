@@ -59,7 +59,11 @@ class Sqrl extends AbstractController
                 case 'disassociate':
                     if (!$this->filter('confirm_disassociate', 'bool'))
                     {
-                        return $this->message(\XF::phrase('you_need_to_confirm_disassociation'));
+                        return $this->error(\XF::phrase('you_need_to_confirm_disassociation'));
+                    }
+                    if (!$visitor->Auth->getAuthenticationHandler()->hasPassword())
+                    {
+                        return $this->error(\XF::phrase('cannot_remove_sqrl_id_account_without_password'));
                     }
 
                     $connectedAccount = $visitor->ConnectedAccounts['sqrl'];
