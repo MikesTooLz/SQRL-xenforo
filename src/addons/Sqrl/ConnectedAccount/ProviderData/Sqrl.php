@@ -44,8 +44,9 @@ class Sqrl extends AbstractProviderData
 
     public function getExtraData()
     {
+        $pData = $this->storageState->retrieveProviderData();
         return array_merge([
             'token' => '',
-        ], $this->storageState->retrieveProviderData());
+        ], $pData ? $pData : []);
     }
 }
