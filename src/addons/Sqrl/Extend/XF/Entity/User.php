@@ -6,7 +6,7 @@ class User extends \XF\Entity\User
 {
     protected function verifyEmail(&$email)
     {
-        if (\Sqrl\GlobalState::$allowRegisterWithoutEmail && $email == '')
+        if (\XF::options()->sqrlAllowRegisterWithoutEmail && $email == '')
         {
             return true;
         }

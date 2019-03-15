@@ -32,7 +32,6 @@ class Register extends \XF\Pub\Controller\Register
         {
             $provider = $this->assertProviderExists($params->provider_id);
             $handler = $provider->getHandler();
-            \Sqrl\GlobalState::$allowRegisterWithoutEmail = intval($provider->options['allow_register_without_email']);
         }
         return parent::actionConnectedAccountRegister($params);
     }
@@ -40,7 +39,7 @@ class Register extends \XF\Pub\Controller\Register
     protected function finalizeRegistration(\XF\Entity\User $user)
     {
         // We know this variable is only set if we are already registering with SQRL
-        if (\Sqrl\GlobalState::$allowRegisterWithoutEmail && $user->email == '')
+        if (\XF::options()->sqrlAllowRegisterWithoutEmail && $user->email == '')
         {
             // Set the user to email validated despite the missing email
             $user->set('user_state', 'valid');

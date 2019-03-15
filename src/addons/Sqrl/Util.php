@@ -77,6 +77,6 @@ abstract class Util
     public static function isEmailOptional()
     {
         return self::isEnabled()
-            && self::getSqrl()->options['allow_register_without_email'] == '1';
+            && \XF::options()->sqrlAllowRegisterWithoutEmail;
     }
 }

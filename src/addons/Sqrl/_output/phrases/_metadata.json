@@ -1,10 +1,4 @@
 {
-    "allow_register_without_email.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "886295f8a3fbeeb40c5484f0e443fc80"
-    },
     "associated.txt": {
         "global_cache": false,
         "version_id": 0,
@@ -137,6 +131,12 @@
         "version_string": "1.2.0",
         "hash": "d7cd18d946bfdb9bbf64a57c5613a572"
     },
+    "option.sqrlAllowRegisterWithoutEmail.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "886295f8a3fbeeb40c5484f0e443fc80"
+    },
     "option.sqrlCentricAccountSidebar.txt": {
         "global_cache": false,
         "version_id": 6,
@@ -154,6 +154,12 @@
         "version_id": 6,
         "version_string": "1.1.5",
         "hash": "7a2c9805cee3edce0149c73e48befed4"
+    },
+    "option_explain.sqrlAllowRegisterWithoutEmail.txt": {
+        "global_cache": false,
+        "version_id": 7,
+        "version_string": "1.2.0",
+        "hash": "f2e47d66586fc4176d2bad3b53fbe3fb"
     },
     "option_explain.sqrlCentricAccountSidebar.txt": {
         "global_cache": false,
@@ -232,12 +238,6 @@
         "version_id": 7,
         "version_string": "1.2.0",
         "hash": "e170986b4a8104b9e67e4c8078081cbf"
-    },
-    "require_email_on_register.txt": {
-        "global_cache": false,
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "ede5aa8a62f221db3a648d1af9ab8030"
     },
     "slot_id.txt": {
         "global_cache": false,

@@ -42,6 +42,20 @@ class Setup extends AbstractSetup
         }
     }
 
+    public function upgrade8Step1()
+    {
+        $db = $this->db();
+        $sqrl = $this->app->finder('XF:ConnectedAccountProvider')
+            ->where('provider_id', 'sqrl')
+            ->fetchOne();
+        if ($sqrl)
+        {
+            $allowRegisterWithoutEmail = $sqrl->options['allow_register_without_email'] == '1';
+            $optionRepo = \XF::repository('XF:Option');
+            $optionRepo->updateOption('sqrlAllowRegisterWithoutEmail', $allowRegisterWithoutEmail);
+        }
+    }
+
     public function uninstall(array $stepParams = [])
     {
         $db = $this->db();

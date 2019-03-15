@@ -28,7 +28,6 @@ class Sqrl extends AbstractProvider
             'slot_id' => '0',
             'private_hostname' => '',
             'private_port' => 55219,
-            'allow_register_without_email' => '0',
         ];
     }
 

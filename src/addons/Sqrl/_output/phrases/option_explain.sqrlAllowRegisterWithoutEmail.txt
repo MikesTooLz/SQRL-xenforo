@@ -1,0 +1,1 @@
+Allows users to register without an email (if they are registering using SQRL).

@@ -1,8 +1,8 @@
 {
     "admin/connected_account_provider_sqrl.html": {
-        "version_id": 0,
-        "version_string": "1.0.0",
-        "hash": "af5ef7bd1a058c06ab27a7adc5676225"
+        "version_id": 8,
+        "version_string": "1.3.0",
+        "hash": "c6796db81046d7a88fb3cad0deab1ab9"
     },
     "admin/sqrl_user_edit_hardlock.html": {
         "version_id": 7,
