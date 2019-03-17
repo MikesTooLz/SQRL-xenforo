@@ -50,6 +50,10 @@ You will also need to remove them from the SSP server which is not done automati
 
 ## Release notes
 
+### 1.3.1
+
+- Fix broken Setup that tried to migrate 'allow register without email' setting into Options.
+
 ### 1.3.0
 
 - Emphasize QR code with CSS transformation and animation on hover.
