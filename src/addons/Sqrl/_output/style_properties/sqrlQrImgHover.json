@@ -1,0 +1,17 @@
+{
+    "group_name": "sqrl",
+    "title": "QR image hover",
+    "description": "Hover state of QR image.",
+    "property_type": "css",
+    "css_components": [
+        "extra"
+    ],
+    "value_type": "",
+    "value_parameters": "",
+    "depends_on": "",
+    "value_group": "",
+    "property_value": {
+        "extra": "-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);\n-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);\nbox-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);\ncursor: none;\nposition: relative;\n-webkit-transform: scale(2.0);\n-ms-transform: scale(2.0);\n-o-transform: scale(2.0);\ntransform: scale(2.0);\nz-index: 1000;"
+    },
+    "display_order": 20
+}

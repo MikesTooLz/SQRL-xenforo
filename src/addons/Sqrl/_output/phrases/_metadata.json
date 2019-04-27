@@ -263,11 +263,59 @@
         "version_string": "1.0.0",
         "hash": "a3af86ebe3277c67f4e97de41243bb31"
     },
+    "style_prop.sqrlButton.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "3775d09efba386719e520a0ad2f67dff"
+    },
+    "style_prop.sqrlButtonHover.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "803be6dcd7e8701f0454bc20927ca6ef"
+    },
+    "style_prop.sqrlQrImg.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "961001875342130c918672263516cac8"
+    },
+    "style_prop.sqrlQrImgHover.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "c7307e8b8c547e1603f93e77b824a613"
+    },
     "style_prop_desc.sqrlAsset.txt": {
         "global_cache": false,
         "version_id": 0,
         "version_string": "1.0.0",
         "hash": "e74f5a82fc81b60ca7ef0a4c4b7d1f42"
+    },
+    "style_prop_desc.sqrlButton.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "277623136398f3dafa784b5ffc4298c7"
+    },
+    "style_prop_desc.sqrlButtonHover.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "06aac005518520e1742e362181315f84"
+    },
+    "style_prop_desc.sqrlQrImg.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "2a0515755d799cc210fef49c04d45b19"
+    },
+    "style_prop_desc.sqrlQrImgHover.txt": {
+        "global_cache": false,
+        "version_id": 9,
+        "version_string": "1.3.1",
+        "hash": "1773464b9c02e4ed04eaf8bbcdf6c900"
     },
     "style_prop_group.sqrl.txt": {
         "global_cache": false,

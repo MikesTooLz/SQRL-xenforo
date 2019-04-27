@@ -1,5 +1,17 @@
 {
     "sqrlAsset.json": {
         "hash": "6164d993bbe33a4040dd91451a0f48ec"
+    },
+    "sqrlButton.json": {
+        "hash": "bfb707162cdc17fb1a8a28ac26d20335"
+    },
+    "sqrlButtonHover.json": {
+        "hash": "b99394d1831203eef5c240d5a9d0db57"
+    },
+    "sqrlQrImg.json": {
+        "hash": "bfd732f0ce45397dcaef8cd3c44b1a31"
+    },
+    "sqrlQrImgHover.json": {
+        "hash": "de56d15bab7906849cc13c6a6051829d"
     }
 }

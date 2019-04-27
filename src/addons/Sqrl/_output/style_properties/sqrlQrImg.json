@@ -1,0 +1,17 @@
+{
+    "group_name": "sqrl",
+    "title": "QR image",
+    "description": "QR image on login pages.",
+    "property_type": "css",
+    "css_components": [
+        "extra"
+    ],
+    "value_type": "",
+    "value_parameters": "",
+    "depends_on": "",
+    "value_group": "",
+    "property_value": {
+        "extra": "width: 66px;\nheight: 66px;\n-webkit-transition: all 0.1s ease-in-out;\n-moz-transition: all 0.1s ease-in-out;\n-ms-transition: all 0.1s ease-in-out;\n-o-transition: all 0.1s ease-in-out;\ntransition: all 0.1s ease-in-out;"
+    },
+    "display_order": 18
+}

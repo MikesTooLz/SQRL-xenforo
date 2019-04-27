@@ -1,0 +1,25 @@
+{
+    "group_name": "sqrl",
+    "title": "SQRL button hover",
+    "description": "Hover state of SQRL button.",
+    "property_type": "css",
+    "css_components": [
+        "text",
+        "background",
+        "border",
+        "border_radius",
+        "border_width_simple",
+        "border_color_simple",
+        "border_radius_simple",
+        "padding",
+        "extra"
+    ],
+    "value_type": "",
+    "value_parameters": "",
+    "depends_on": "",
+    "value_group": "",
+    "property_value": {
+        "extra": "-webkit-transition: all 0.1s ease-in-out;\n-moz-transition: all 0.1s ease-in-out;\n-ms-transition: all 0.1s ease-in-out;\n-o-transition: all 0.1s ease-in-out;\ntransition: all 0.1s ease-in-out;"
+    },
+    "display_order": 10
+}

@@ -36,25 +36,10 @@
 		}
 	
 		img {
-			width: 66px;
-			height: 66px;
+			.xf-sqrlQrImg();
 
 			&:hover {
-				-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-				-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-				box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-				cursor: none;
-				position: relative;
-				-webkit-transform: scale(2.0);
-				-ms-transform: scale(2.0);
-				-o-transform: scale(2.0);
-				transform: scale(2.0);
-				z-index: 1000;
-				-webkit-transition: all 0.1s ease-in-out;
-				-moz-transition: all 0.1s ease-in-out;
-				-ms-transition: all 0.1s ease-in-out;
-				-o-transition: all 0.1s ease-in-out;
-				transition: all 0.1s ease-in-out;
+				.xf-sqrlQrImgHover();
 			}
 		}
 	}
@@ -85,16 +70,25 @@
 	}
 }
 
-button.button--provider--sqrl > .button-text:before, a.button.button--provider--sqrl > .button-text:before {
-	font: normal normal normal 18px/1 sqrl;
-	content: "\e900";
-	/* content: "\e901"; */
+a, button {
+	&.button--provider.button--provider--sqrl {
+		.xf-sqrlButton();
+		
+		&:hover {
+			.xf-sqrlButtonHover();
+		}
+
+		// The icon
+		& > .button-text:before {
+			font: normal normal normal 18px/1 sqrl;
+			content: "\e900";
+		}
+	}
 }
 
 .blockLink.sqrl-centric {
 	display: flex;
 	align-items: center;
-	// padding: 10px;
 
 	span {
 		flex: 1 1 1px;
@@ -103,7 +97,6 @@ button.button--provider--sqrl > .button-text:before, a.button.button--provider--
 	&:after {
 		display: inline-block;
 		font: normal normal normal 18px/1 "sqrl";
-		// font-size: inherit;
 		text-rendering: auto;
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
@@ -111,7 +104,6 @@ button.button--provider--sqrl > .button-text:before, a.button.button--provider--
 		transform: translate(0, 0);
 		width: auto !important;
 		content: '\e901';
-		// padding-right: 10px;
 		flex: 0 0 auto;
 		opacity: 0.65;
 	}

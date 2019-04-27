@@ -1,0 +1,1 @@
+Hover state of SQRL button.
