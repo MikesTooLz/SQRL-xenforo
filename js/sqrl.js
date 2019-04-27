@@ -23,8 +23,6 @@ console = console || {log: function(){}, warn: function(){}};
 
             // Get nut
             this.getNut();
-
-            setInterval(this.getNut.bind(this), 60 * 1000);
         },
 
         getNut: function() {
