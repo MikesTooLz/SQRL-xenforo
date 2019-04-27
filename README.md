@@ -50,6 +50,11 @@ You will also need to remove them from the SSP server which is not done automati
 
 ## Release notes
 
+### 1.4.0
+
+- Fix design flaw where nut gets refreshed every minute.
+- Add style properties to configure SQRL button and QR image.
+
 ### 1.3.1
 
 - Fix broken Setup that tried to migrate 'allow register without email' setting into Options.
