@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Pub\Controller;
 
-class Login extends \XF\Pub\Controller\Login
+class Login extends XFCP_Login
 {
     // Ensure that SQRL is displayed separately
     public function actionIndex()

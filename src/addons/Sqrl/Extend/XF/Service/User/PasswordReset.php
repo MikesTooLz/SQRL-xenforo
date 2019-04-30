@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Service\User;
 
-class PasswordReset extends \XF\Service\User\PasswordReset
+class PasswordReset extends XFCP_PasswordReset
 {
     public function canTriggerConfirmation(&$error = null)
     {

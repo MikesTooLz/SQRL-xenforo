@@ -10,7 +10,7 @@ namespace Sqrl\Extend\XF\ControllerPlugin;
  * place to inject because we get the user object and can redirect the program flow to our error.
  * Simple as that.
  */
-class Login extends \XF\ControllerPlugin\Login
+class Login extends XFCP_Login
 {
     public function triggerIfTfaConfirmationRequired(\XF\Entity\User $user, $callbackOrUrl)
     {

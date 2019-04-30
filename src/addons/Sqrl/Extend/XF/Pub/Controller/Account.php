@@ -4,7 +4,7 @@ namespace Sqrl\Extend\XF\Pub\Controller;
 
 use XF\Mvc\ParameterBag;
 
-class Account extends \XF\Pub\Controller\Account
+class Account extends XFCP_Account
 {
     // Ensure that SQRL is displayed separately
     public function actionConnectedAccount()

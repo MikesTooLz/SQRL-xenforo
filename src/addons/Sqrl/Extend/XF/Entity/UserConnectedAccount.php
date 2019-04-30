@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Entity;
 
-class UserConnectedAccount extends \XF\Entity\UserConnectedAccount
+class UserConnectedAccount extends XFCP_UserConnectedAccount
 {
     protected function _preDelete()
     {

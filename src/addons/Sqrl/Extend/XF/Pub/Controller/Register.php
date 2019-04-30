@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Pub\Controller;
 
-class Register extends \XF\Pub\Controller\Register
+class Register extends XFCP_Register
 {
     // Ensure that SQRL is displayed separately
     public function actionIndex()

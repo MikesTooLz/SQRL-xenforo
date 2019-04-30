@@ -4,7 +4,7 @@ namespace Sqrl\Extend\XF\Repository;
 
 use XF\ConnectedAccount\ProviderData\AbstractProviderData;
 
-class ConnectedAccount extends \XF\Repository\ConnectedAccount
+class ConnectedAccount extends XFCP_ConnectedAccount
 {
     public function associateConnectedAccountWithUser(\XF\Entity\User $user, AbstractProviderData $providerData)
     {

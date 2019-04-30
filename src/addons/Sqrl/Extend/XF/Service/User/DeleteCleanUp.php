@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Service\User;
 
-class DeleteCleanUp extends \XF\Service\User\DeleteCleanUp
+class DeleteCleanUp extends XFCP_DeleteCleanUp
 {
     public function __construct(\XF\App $app, $userId, $userName)
     {

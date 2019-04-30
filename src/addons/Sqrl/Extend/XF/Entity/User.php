@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\Entity;
 
-class User extends \XF\Entity\User
+class User extends XFCP_User
 {
     protected function verifyEmail(&$email)
     {

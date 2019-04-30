@@ -2,7 +2,7 @@
 
 namespace Sqrl\Extend\XF\ControllerPlugin;
 
-class Error extends \XF\ControllerPlugin\Error
+class Error extends XFCP_Error
 {
     public function actionRegistrationRequired()
     {
